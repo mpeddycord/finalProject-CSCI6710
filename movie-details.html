@@ -48,7 +48,6 @@
                       <p class="publish-date">March 15 2025</p>
                     </div>
                   </div>
-                  <!-- <div class="divider"></div> -->
                 </div>
               </div>
               <div class="runtime-container">
@@ -56,7 +55,6 @@
                 <p class="runtime-value">122 Minutes</p>
               </div>
             </div>
-            <!-- <div class="divider"></div> -->
 
             <div class="genre-container">
               <img
@@ -105,28 +103,27 @@
                   </div>
                   <p class="release-date-value">1977</p>
                 </div>
-                <div class="divider"></div> 
+                <div class="movie-details-divider"></div> 
                 <div class="director-row">
                   <p class="director-label">Director</p>
                   <p class="director-value">George Lucas</p>
                 </div>
-                <div class="divider"></div>
+                <div class="movie-details-divider"></div>
                 <div class="box-office-row">
                   <p class="box-office-label">Box Office Gross</p>
                   <p class="box-office-value">$775,398,507</p>
                 </div>
-                <div class="divider"></div>
-                <div class="budget-rating-row">
-                  <div class="budget-rating-labels">
-                    <p>Budget<br /></p>
-                    <p class="rating-label">Rating</p>
-                  </div>
-                  <div class="budget-rating-values">
-                    <p>$11,000,000</p>
-                    <p class="rating-value">PG</p>
-                  </div>
+                <div class="movie-details-divider"></div>
+                <div class="budget-row">
+                    <p class="budget-label">Budget</p>
+                    <p class="budget-value">$11,000,000</p>
                 </div>
-                <div class="divider"></div>
+                <div class="movie-details-divider"></div>
+                <div class="rating-row">
+                  <p class="rating-label">Rating</p>
+                  <p class="rating-value">PG</p>
+                </div>
+                <div class="movie-details-divider"></div>
                 <p class="details-note">
                   adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                   dolore magna aliqua.
@@ -300,44 +297,35 @@
         </p>
 
         <div class="divider"></div>
+      </section>
 
-        <section class="newsletter">
-            <img
-              src="images/newsletter-bg.png"
-              class="newsletter-bg"
-              alt="Newsletter background"
+      <section class="newsletter">
+        <img
+          src="images/newsletter-bg.png"
+          class="newsletter-bg"
+          alt="Newsletter background"
+        />
+        <div class="newsletter-content">
+          <h2 class="newsletter-title">Movie magic to your inbox</h2>
+          <p class="newsletter-description">
+            Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqut enim ad minim
+          </p>
+          <div class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Your email address..."
+              class="email-input"
             />
-            <div class="newsletter-content">
-              <h2 class="newsletter-title">Movie magic to your inbox</h2>
-              <p class="newsletter-description">
-                Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqut enim ad minim
-              </p>
-              <div class="newsletter-form">
-                <input
-                  type="email"
-                  placeholder="Your email address..."
-                  class="email-input"
-                />
-                <button type="submit" class="subscribe-button">Subscribe</button>
-              </div>
-            </div>
-          </section>
-
-        <h2 class="related-movies-title">You may like these movies too</h2>
+            <button type="submit" class="subscribe-button">Subscribe</button>
+          </div>
+        </div>
       </section>
 
       <section class="recommendations">
         <div class="recommendations-header">
           <div class="recommendations-title">
-            <h2>Try one of these great<br />movies to make your day</h2>
-          </div>
-          <div class="recommendations-description">
-            <p>
-              Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad
-              minim
-            </p>
+            <h2 class="related-movies-title">You may like these movies too</h2>
           </div>
         </div>
 
@@ -351,7 +339,14 @@
             <h3 class="movie-name">E.T.</h3>
 
             <div class="movie-meta-info">
-              <span class="duration">115 Minutes</span>
+              <div class="duration">
+                <img
+                src="images/clock.png"
+                class="genre-icon"
+                alt="Clock icon"
+              />
+                <span >115 Minutes</span>
+              </div>
               <div class="genre">
                 <img
                   src="images/camera.png"
@@ -372,7 +367,14 @@
             <h3 class="movie-name">Airplane</h3>
 
             <div class="movie-meta-info">
-              <span class="duration">88 Minutes</span>
+              <div class="duration">
+                <img
+                src="images/clock.png"
+                class="genre-icon"
+                alt="Clock icon"
+              />
+                <span >88 Minutes</span>
+              </div>
               <div class="genre">
                 <img
                   src="images/camera.png"
@@ -393,7 +395,14 @@
             <h3 class="movie-name">Super Mario Bros.</h3>
 
             <div class="movie-meta-info">
-              <span class="duration">92 Minutes</span>
+              <div class="duration">
+                <img
+                src="images/clock.png"
+                class="genre-icon"
+                alt="Clock icon"
+              />
+                <span >92 Minutes</span>
+              </div>
               <div class="genre">
                 <img
                   src="images/camera.png"
@@ -414,7 +423,14 @@
             <h3 class="movie-name">The Silence of the Lambs</h3>
 
             <div class="movie-meta-info">
-              <span class="duration">118 Minutes</span>
+              <div class="duration">
+                <img
+                src="images/clock.png"
+                class="genre-icon"
+                alt="Clock icon"
+              />
+                <span >118 Minutes</span>
+              </div>
               <div class="genre">
                 <img
                   src="images/camera.png"
@@ -422,92 +438,6 @@
                   alt="Genre icon"
                 />
                 <span>Thriller</span>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="movie-grid">
-          <article class="movie-card">
-            <img
-              src="images/blade-runner.png"
-              class="movie-poster"
-              alt="Blade Runner"
-            />
-            <h3 class="movie-name">Blade Runner</h3>
-
-            <div class="movie-meta-info">
-              <span class="duration">117 Minutes</span>
-              <div class="genre">
-                <img
-                  src="images/camera.png"
-                  class="genre-icon"
-                  alt="Genre icon"
-                />
-                <span>Sci-Fi</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="movie-card">
-            <img
-              src="images/good-bad-ugly.png"
-              class="movie-poster"
-              alt="The Good, The Bad, and the Ugly"
-            />
-            <h3 class="movie-name">The Good, The Bad, and the Ugly</h3>
-
-            <div class="movie-meta-info">
-              <span class="duration">178 Minutes</span>
-              <div class="genre">
-                <img
-                  src="images/camera.png"
-                  class="genre-icon"
-                  alt="Genre icon"
-                />
-                <span>Western</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="movie-card">
-            <img
-              src="images/anchorman.png"
-              class="movie-poster"
-              alt="Anchorman"
-            />
-            <h3 class="movie-name">Anchorman</h3>
-
-            <div class="movie-meta-info">
-              <span class="duration">94 Minutes</span>
-              <div class="genre">
-                <img
-                  src="images/camera.png"
-                  class="genre-icon"
-                  alt="Genre icon"
-                />
-                <span>Comedy</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="movie-card">
-            <img
-              src="images/singing.png"
-              class="movie-poster"
-              alt="Singin' In The Rain"
-            />
-            <h3 class="movie-name">Singin' In The Rain</h3>
-
-            <div class="movie-meta-info">
-              <span class="duration">103 Minutes</span>
-              <div class="genre">
-                <img
-                  src="images/camera.png"
-                  class="genre-icon"
-                  alt="Genre icon"
-                />
-                <span>Musical</span>
               </div>
             </div>
           </article>

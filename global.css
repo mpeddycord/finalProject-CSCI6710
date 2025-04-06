@@ -273,23 +273,15 @@
     letter-spacing: -0.28px;
   }
   
-  .duration {
-    border-radius: 30px;
-    background-color: rgba(0, 0, 0, 0.05);
-    padding: 12px 27px;
-    font-size: 12px;
-    font-weight: bold;
-  }
-  
   @media (max-width: 991px) {
     .duration {
       padding-left: 20px;
     }
   }
   
-  .genre {
-    border-radius: 30px;
-    background-color: rgba(0, 0, 0, 0.05);
+  .genre, .duration {
+    /* border-radius: 30px; */
+    /* background-color: rgba(0, 0, 0, 0.05); */
     display: flex;
     padding: 8px 16px;
     align-items: center;
@@ -379,6 +371,7 @@
     display: inline-block;
     width: 50%;
     margin-top: 20px;
+    text-align: center;
   }
   
   @media (max-width: 991px) {
@@ -507,6 +500,7 @@
     border-radius: 0px 0px 0px 0px;
     margin-top: 90px;
     max-width: 1280px;
+    cursor: pointer;
   }
   
   @media (max-width: 991px) {
@@ -628,7 +622,6 @@
   .movie-details {
     display: flex;
     margin-top: 56px;
-    margin-left: 42px;
     align-items: center;
     gap: 18px;
     font-size: 14px;
@@ -798,7 +791,7 @@
     display: flex;
     margin-top: 80px;
     align-items: stretch;
-    gap: 40px;
+    gap: 20px;
     flex-wrap: wrap;
   }
   
@@ -817,6 +810,7 @@
     align-items: center;
     gap: 8px;
     flex: 1;
+    width: 25%;
   }
   
   @media (max-width: 991px) {
@@ -902,7 +896,7 @@
   
   .instagram-grid {
     display: flex;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     gap: 20px;
     width: 100%;
   }
@@ -960,6 +954,7 @@
     width: 26px;
     padding: 6px 8px;
     text-align: center;
+    margin-right: -40px;
   }
   
   @media (max-width: 991px) {
@@ -970,7 +965,7 @@
   
   .instagram-comments {
     display: flex;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     gap: 20px;
     width: 100%;
   }
@@ -1052,10 +1047,12 @@
   .centered-button {
     align-self: center;
     margin-top: 81px;
-    margin-left: 15px;
+    margin-left: auto;
+    margin-right: auto;
     width: 229px;
     max-width: 100%;
     text-align: center;
+    display: block;
   }
   
   @media (max-width: 991px) {
@@ -1433,4 +1430,9 @@
     margin-left: 1000px;
     margin-top: -50px;
     cursor: pointer;
+  }
+
+  .instagram-icons {
+    width: 100%;
+    margin-top: -40px;
   }

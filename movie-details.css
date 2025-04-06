@@ -575,7 +575,7 @@
     text-align: right;
   }
 
-  .budget-rating-row {
+  .budget-row {
     display: flex;
     margin-top: 15px;
     align-items: stretch;
@@ -588,12 +588,12 @@
   }
 
   @media (max-width: 991px) {
-    .budget-rating-row {
+    .budget-row {
       white-space: initial;
     }
   }
 
-  .budget-rating-labels {
+  .budget-label {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -601,33 +601,33 @@
   }
 
   @media (max-width: 991px) {
-    .budget-rating-labels {
+    .budget-label {
       white-space: initial;
     }
   }
 
   .rating-label {
-    align-self: start;
-    margin-top: 16px;
-  }
-
-  .budget-rating-values {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    color: rgba(0, 0, 0, 1);
-    text-align: right;
+    color: #000000;
   }
 
-  @media (max-width: 991px) {
-    .budget-rating-values {
-      white-space: initial;
-    }
+  .rating-row {
+    display: flex;
+    margin-top: 15px;
+    align-items: stretch;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    white-space: nowrap;
+    letter-spacing: -0.72px;
+    justify-content: space-between;
   }
 
   .rating-value {
-    align-self: end;
-    margin-top: 38px;
+    color: rgba(0, 0, 0, 1);
+    text-align: right;
   }
 
   .details-note {
@@ -1554,4 +1554,20 @@
       max-width: 100%;
       margin-top: 40px;
     }
+  }
+
+  .recommendations-title {
+    text-align: center;
+    width: 100%;
+  }
+
+  .movie-details-divider {
+    aspect-ratio: 1000;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    align-self: stretch;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 1px;
   }
