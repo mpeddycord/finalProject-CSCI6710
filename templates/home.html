@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movieland - The Best Movies, Period</title>
-    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/global.css') }}" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lobster&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -15,14 +15,14 @@
       <header class="site-header">
         <h1 class="logo">Movieland<span class="logo-dot">.</span></h1>
           <nav class="main-nav">
-            <a href="./home.html" class="nav-link">Home</a>
-            <a href="#" class="nav-link">Movies</a>
-            <a href="./blog-list.html" class="nav-link">Blog</a>
-            <a href="./contact-page.html" class="nav-link">Contact</a>
-            <a href="#" class="nav-link">About us</a>
+            <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+            <a href="{{ url_for('index') }}" class="nav-link">Movies</a>
+            <a href="{{ url_for('list') }}" class="nav-link">Blog</a>
+            <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+            <a href="{{ url_for('about') }}" class="nav-link">About us</a>
           </nav>
           <div class="social-header">
-            <img src="./images/Social.svg" />
+            <img src="{{ url_for('static', filename='images/Social.svg') }}" />
           </div>
       </header>
 
@@ -43,10 +43,18 @@
                 ad minim
               </p>
               <div class="movie-meta">
-                <span class="duration">100 Minutes</span>
+                <div class="duration">
+                  <img
+                  src="{{ url_for('static', filename='images/clock.png') }}"
+                  class="duration-icon"
+                  alt="Clock icon"
+                />
+                  <span >100 Minutes</span>
+                </div>
+                <!-- <span class="duration">100 Minutes</span> -->
                 <div class="genre">
                   <img
-                    src="images/camera.png"
+                    src="{{ url_for('static', filename='images/camera.png') }}"
                     class="genre-icon"
                     alt="Genre icon"
                   />
@@ -56,7 +64,7 @@
               <div class="movie-footer">
                 <div class="author">
                   <img
-                    src="images/author.png"
+                    src="{{ url_for('static', filename='images/author.png') }}"
                     class="author-image"
                     alt="Author"
                   />
@@ -72,19 +80,18 @@
           <div class="hero-right">
             <div class="hero-image-container">
               <img
-                src="images/hangover.png"
+                src="{{ url_for('static', filename='images/hangover.png') }}"
                 class="hero-background"
                 alt="Movie background"
               />
               <img
-                src="images/handpicked-icon.png"
+                src="{{ url_for('static', filename='images/handpicked-icon.png') }}"
                 class="play-button"
                 alt="Play button"
               />
             </div>
           </div>
         </div>
-        <!-- <div class="accent-bar"></div> -->
       </section>
 
       <section class="categories-section">
@@ -93,7 +100,7 @@
           <a href="#" class="view-all">View All Categories</a>
         </div>
         <img
-          src="images/categories.png"
+          src="{{ url_for('static', filename='images/categories.png') }}"
           class="categories-image"
           alt="Categories"
         />
@@ -109,7 +116,7 @@
         <div class="movie-grid">
           <article class="movie-card movie-card-background">
             <img
-              src="images/jaws.png"
+              src="{{ url_for('static', filename='images/jaws.png') }}"
               class="movie-poster"
               alt="Jaws"
             />
@@ -117,16 +124,15 @@
             <div class="movie-details">
               <div class="duration">
                 <img
-                src="images/clock.png"
-                class="genre-icon"
+                src="{{ url_for('static', filename='images/clock.png') }}"
+                class="duration-icon"
                 alt="Clock icon"
               />
                 <span >124 Minutes</span>
               </div>
-              <!-- <span class="duration">124 Minutes</span> -->
               <div class="genre">
                 <img
-                  src="images/camera.png"
+                  src="{{ url_for('static', filename='images/camera.png') }}"
                   class="genre-icon"
                   alt="Genre icon"
                 />
@@ -137,7 +143,7 @@
 
           <article class="movie-card movie-card-background">
             <img
-              src="images/star-wars.png"
+              src="{{ url_for('static', filename='images/star-wars.png') }}"
               class="movie-poster"
               alt="Star Wars"
             />
@@ -145,16 +151,15 @@
             <div class="movie-details">
               <div class="duration">
                 <img
-                src="images/clock.png"
-                class="genre-icon"
+                src="{{ url_for('static', filename='images/clock.png') }}"
+                class="duration-icon"
                 alt="Clock icon"
               />
                 <span >121 Minutes</span>
               </div>
-              <!-- <span class="duration">121 Minutes</span> -->
               <div class="genre">
                 <img
-                  src="images/camera.png"
+                  src="{{ url_for('static', filename='images/camera.png') }}"
                   class="genre-icon"
                   alt="Genre icon"
                 />
@@ -165,7 +170,7 @@
 
           <article class="movie-card movie-card-background">
             <img
-              src="images/avatar.png"
+              src="{{ url_for('static', filename='images/avatar.png') }}"
               class="movie-poster"
               alt="Avatar"
             />
@@ -173,17 +178,16 @@
             <div class="movie-details">
               <div class="duration">
                 <img
-                src="images/clock.png"
-                class="genre-icon"
+                src="{{ url_for('static', filename='images/clock.png') }}"
+                class="duration-icon"
                 alt="Clock icon"
               />
                 <span >162 Minutes</span>
               </div>
-              <!-- <span class="duration">162 Minutes</span> -->
               <div class="genre">
                 <img
-                  src="images/camera.png"
-                  class="genre-icon"
+                  src="{{ url_for('static', filename='images/camera.png') }}"
+                  class="duration-icon"
                   alt="Genre icon"
                 />
                 <span>Sci-Fi</span>
@@ -195,7 +199,7 @@
         <div class="movie-grid">
           <article class="movie-card movie-card-background">
             <img
-              src="images/matrix.png"
+              src="{{ url_for('static', filename='images/matrix.png') }}"
               class="movie-poster"
               alt="The Matrix"
             />
@@ -203,16 +207,15 @@
             <div class="movie-details">
               <div class="duration">
                 <img
-                src="images/clock.png"
-                class="genre-icon"
+                src="{{ url_for('static', filename='images/clock.png') }}"
+                class="duration-icon"
                 alt="Clock icon"
               />
                 <span >136 Minutes</span>
               </div>
-              <!-- <span class="duration">136 Minutes</span> -->
               <div class="genre">
                 <img
-                  src="images/camera.png"
+                  src="{{ url_for('static', filename='images/camera.png') }}"
                   class="genre-icon"
                   alt="Genre icon"
                 />
@@ -223,7 +226,7 @@
 
           <article class="movie-card movie-card-background">
               <img
-                src="images/halloween.png"
+                src="{{ url_for('static', filename='images/halloween.png') }}"
                 class="movie-poster"
                 alt="Halloween"
               />
@@ -231,8 +234,8 @@
             <div class="movie-details">
               <div class="duration">
                 <img
-                src="images/clock.png"
-                class="genre-icon"
+                src="{{ url_for('static', filename='images/clock.png') }}"
+                class="duration-icon"
                 alt="Clock icon"
               />
                 <span >91 Minutes</span>
@@ -240,7 +243,7 @@
               <!-- <span class="duration">91 Minutes</span> -->
               <div class="genre">
                 <img
-                  src="images/camera.png"
+                  src="{{ url_for('static', filename='images/camera.png') }}"
                   class="genre-icon"
                   alt="Genre icon"
                 />
@@ -251,7 +254,7 @@
 
           <article class="movie-card">
             <img
-              src="images/ad.png"
+              src="{{ url_for('static', filename='images/ad.png') }}"
               class="ad"
               alt="Ad"
             />
@@ -261,7 +264,7 @@
         <div class="movie-grid">
           <article class="movie-card movie-card-background">
             <img
-              src="images/exorcist.png"
+              src="{{ url_for('static', filename='images/exorcist.png') }}"
               class="movie-poster"
               alt="The Exorcist"
             />
@@ -269,16 +272,15 @@
             <div class="movie-details">
               <div class="duration">
                 <img
-                src="images/clock.png"
-                class="genre-icon"
+                src="{{ url_for('static', filename='images/clock.png') }}"
+                class="duration-icon"
                 alt="Clock icon"
               />
                 <span >122 Minutes</span>
               </div>
-              <!-- <span class="duration">122 Minutes</span> -->
               <div class="genre">
                 <img
-                  src="images/camera.png"
+                  src="{{ url_for('static', filename='images/camera.png') }}"
                   class="genre-icon"
                   alt="Genre icon"
                 />
@@ -289,7 +291,7 @@
 
           <article class="movie-card movie-card-background">
             <img
-              src="images/ghostbusters.png"
+              src="{{ url_for('static', filename='images/ghostbusters.png') }}"
               class="movie-poster"
               alt="Ghostbusters"
             />
@@ -297,8 +299,8 @@
             <div class="movie-details">
               <div class="duration">
                 <img
-                src="images/clock.png"
-                class="genre-icon"
+                src="{{ url_for('static', filename='images/clock.png') }}"
+                class="duration-icon"
                 alt="Clock icon"
               />
                 <span >105 Minutes</span>
@@ -306,7 +308,7 @@
               <!-- <span class="duration">105 Minutes</span> -->
               <div class="genre">
                 <img
-                  src="images/camera.png"
+                  src="{{ url_for('static', filename='images/camera.png') }}"
                   class="genre-icon"
                   alt="Genre icon"
                 />
@@ -317,7 +319,7 @@
 
           <article class="movie-card movie-card-background">
             <img
-              src="images/crazy-rich-asians.png"
+              src="{{ url_for('static', filename='images/crazy-rich-asians.png') }}"
               class="movie-poster"
               alt="Crazy Rich Asians"
             />
@@ -325,16 +327,15 @@
             <div class="movie-details">
               <div class="duration">
                 <img
-                src="images/clock.png"
-                class="genre-icon"
+                src="{{ url_for('static', filename='images/clock.png') }}"
+                class="duration-icon"
                 alt="Clock icon"
               />
                 <span >120 Minutes</span>
               </div>
-              <!-- <span class="duration">120 Minutes</span> -->
               <div class="genre">
                 <img
-                  src="images/camera.png"
+                  src="{{ url_for('static', filename='images/camera.png') }}"
                   class="genre-icon"
                   alt="Genre icon"
                 />
@@ -361,7 +362,7 @@
           </div>
           <div class="cta-image">
             <img
-              src="images/family.png"
+              src="{{ url_for('static', filename='images/family.png') }}"
               alt="Movie selection"
             />
           </div>
@@ -382,7 +383,7 @@
             <div class="profile-card">
               <div class="profile-icon">
                   <img
-                  src="images/profile-icon.png"
+                  src="{{ url_for('static', filename='images/profile-icon.png') }}"
                   alt="Profile background"
                 />
               </div>
@@ -395,7 +396,7 @@
             <div class="profile-card">
               <div class="profile-icon">
                 <img
-                  src="images/profile-icon.png"
+                  src="{{ url_for('static', filename='images/profile-icon.png') }}"
                   alt="Profile background"
                 />
               </div>
@@ -408,7 +409,7 @@
             <div class="profile-card">
               <div class="profile-icon">
                 <img
-                  src="images/profile-icon.png"
+                  src="{{ url_for('static', filename='images/profile-icon.png') }}"
                   alt="Profile background"
                 />
               </div>
@@ -421,7 +422,7 @@
             <div class="profile-card">
               <div class="profile-icon">
                 <img
-                  src="images/profile-icon.png"
+                  src="{{ url_for('static', filename='images/profile-icon.png') }}"
                   alt="Profile background"
                 />
               </div>
@@ -435,28 +436,28 @@
           <div class="instagram-grid">
             <div class="instagram-post">
               <img
-                src="images/wish.png"
+                src="{{ url_for('static', filename='images/wish.png') }}"
                 alt="Instagram post"
               />
               <span class="post-count">1/3</span>
             </div>
             <div class="instagram-post">
               <img
-                src="images/lego.png"
+                src="{{ url_for('static', filename='images/lego.png') }}"
                 alt="Instagram post"
               />
               <span class="post-count">1/3</span>
             </div>
             <div class="instagram-post">
               <img
-                src="images/butler.png"
+                src="{{ url_for('static', filename='images/butler.png') }}"
                 alt="Instagram post"
               />
               <span class="post-count">1/3</span>
             </div>
             <div class="instagram-post">
               <img
-                src="images/harley.png"
+                src="{{ url_for('static', filename='images/harley.png') }}"
                 alt="Instagram post"
               />
               <span class="post-count">1/3</span>
@@ -465,10 +466,10 @@
   
           <div class="instagram-comments">
             <div class="comment-card">
-              <img src="images/instagram.png" class="instagram-icons" />
+              <img src="{{ url_for('static', filename='images/instagram.png') }}" class="instagram-icons" />
               <div class="like-info">
                 <img
-                  src="images/person.png"
+                  src="{{ url_for('static', filename='images/person.png') }}"
                   alt="Person Like icon"
                 />
                 <p class="likes">
@@ -483,10 +484,10 @@
             </div>
   
             <div class="comment-card">
-              <img src="images/instagram.png" class="instagram-icons" />
+              <img src="{{ url_for('static', filename='images/instagram.png') }}" class="instagram-icons" />
               <div class="like-info">
                 <img
-                  src="images/person.png"
+                  src="{{ url_for('static', filename='images/person.png') }}"
                   alt="Person Like icon"
                 />
                 <p class="likes">
@@ -505,10 +506,10 @@
             </div>
   
             <div class="comment-card">
-              <img src="images/instagram.png" class="instagram-icons" />
+              <img src="{{ url_for('static', filename='images/instagram.png') }}" class="instagram-icons" />
               <div class="like-info">
                 <img
-                  src="images/person.png"
+                  src="{{ url_for('static', filename='images/person.png') }}"
                   alt="Person Like icon"
                 />
                 <p class="likes">
@@ -524,10 +525,10 @@
             </div>
   
             <div class="comment-card">
-              <img src="images/instagram.png" class="instagram-icons" />
+              <img src="{{ url_for('static', filename='images/instagram.png') }}" class="instagram-icons" />
               <div class="like-info">
                 <img
-                  src="images/person.png"
+                  src="{{ url_for('static', filename='images/person.png') }}"
                   alt="Person Like icon"
                 />
                 <p class="likes">
@@ -565,7 +566,7 @@
         <div class="movie-grid">
           <article class="movie-card movie-card-background">
             <img
-              src="images/et.png"
+              src="{{ url_for('static', filename='images/et.png') }}"
               class="movie-poster"
               alt="E.T."
             />
@@ -574,15 +575,15 @@
             <div class="movie-meta-info">
               <div class="duration">
                 <img
-                src="images/clock.png"
-                class="genre-icon"
+                src="{{ url_for('static', filename='images/clock.png') }}"
+                class="duration-icon"
                 alt="Clock icon"
               />
                 <span >115 Minutes</span>
               </div>
               <div class="genre">
                 <img
-                  src="images/camera.png"
+                  src="{{ url_for('static', filename='images/camera.png') }}"
                   class="genre-icon"
                   alt="Genre icon"
                 />
@@ -593,7 +594,7 @@
 
           <article class="movie-card movie-card-background">
             <img
-              src="images/airplane.png"
+              src="{{ url_for('static', filename='images/airplane.png') }}"
               class="movie-poster"
               alt="Airplane"
             />
@@ -602,15 +603,15 @@
             <div class="movie-meta-info">
               <div class="duration">
                 <img
-                src="images/clock.png"
-                class="genre-icon"
+                src="{{ url_for('static', filename='images/clock.png') }}"
+                class="duration-icon"
                 alt="Clock icon"
               />
                 <span>88 Minutes</span>
               </div>
               <div class="genre">
                 <img
-                  src="images/camera.png"
+                  src="{{ url_for('static', filename='images/camera.png') }}"
                   class="genre-icon"
                   alt="Genre icon"
                 />
@@ -621,7 +622,7 @@
 
           <article class="movie-card movie-card-background">
             <img
-              src="images/mario.png"
+              src="{{ url_for('static', filename='images/mario.png') }}"
               class="movie-poster"
               alt="Super Mario Bros."
             />
@@ -630,15 +631,15 @@
             <div class="movie-meta-info">
               <div class="duration">
                 <img
-                src="images/clock.png"
-                class="genre-icon"
+                src="{{ url_for('static', filename='images/clock.png') }}"
+                class="duration-icon"
                 alt="Clock icon"
               />
                 <span >92 Minutes</span>
               </div>
               <div class="genre">
                 <img
-                  src="images/camera.png"
+                  src="{{ url_for('static', filename='images/camera.png') }}"
                   class="genre-icon"
                   alt="Genre icon"
                 />
@@ -649,7 +650,7 @@
 
           <article class="movie-card movie-card-background">
             <img
-              src="images/lambs.png"
+              src="{{ url_for('static', filename='images/lambs.png') }}"
               class="movie-poster"
               alt="The Silence of the Lambs"
             />
@@ -658,15 +659,15 @@
             <div class="movie-meta-info">
               <div class="duration">
                 <img
-                src="images/clock.png"
-                class="genre-icon"
+                src="{{ url_for('static', filename='images/clock.png') }}"
+                class="duration-icon"
                 alt="Clock icon"
               />
                 <span >118 Minutes</span>
               </div>
               <div class="genre">
                 <img
-                  src="images/camera.png"
+                  src="{{ url_for('static', filename='images/camera.png') }}"
                   class="genre-icon"
                   alt="Genre icon"
                 />
@@ -679,7 +680,7 @@
         <div class="movie-grid">
           <article class="movie-card movie-card-background">
             <img
-              src="images/blade-runner.png"
+              src="{{ url_for('static', filename='images/blade-runner.png') }}"
               class="movie-poster"
               alt="Blade Runner"
             />
@@ -688,15 +689,15 @@
             <div class="movie-meta-info">
               <div class="duration">
                 <img
-                src="images/clock.png"
-                class="genre-icon"
+                src="{{ url_for('static', filename='images/clock.png') }}"
+                class="duration-icon"
                 alt="Clock icon"
               />
                 <span >117 Minutes</span>
               </div>
               <div class="genre">
                 <img
-                  src="images/camera.png"
+                  src="{{ url_for('static', filename='images/camera.png') }}"
                   class="genre-icon"
                   alt="Genre icon"
                 />
@@ -707,7 +708,7 @@
 
           <article class="movie-card movie-card-background">
             <img
-              src="images/good-bad-ugly.png"
+              src="{{ url_for('static', filename='images/good-bad-ugly.png') }}"
               class="movie-poster"
               alt="The Good, The Bad, and the Ugly"
             />
@@ -716,15 +717,15 @@
             <div class="movie-meta-info">
               <div class="duration">
                 <img
-                src="images/clock.png"
-                class="genre-icon"
+                src="{{ url_for('static', filename='images/clock.png') }}"
+                class="duration-icon"
                 alt="Clock icon"
               />
                 <span >178 Minutes</span>
               </div>
               <div class="genre">
                 <img
-                  src="images/camera.png"
+                  src="{{ url_for('static', filename='images/camera.png') }}"
                   class="genre-icon"
                   alt="Genre icon"
                 />
@@ -735,7 +736,7 @@
 
           <article class="movie-card movie-card-background">
             <img
-              src="images/anchorman.png"
+              src="{{ url_for('static', filename='images/anchorman.png') }}"
               class="movie-poster"
               alt="Anchorman"
             />
@@ -744,15 +745,15 @@
             <div class="movie-meta-info">
               <div class="duration">
                 <img
-                src="images/clock.png"
-                class="genre-icon"
+                src="{{ url_for('static', filename='images/clock.png') }}"
+                class="duration-icon"
                 alt="Clock icon"
               />
                 <span >94 Minutes</span>
               </div>
               <div class="genre">
                 <img
-                  src="images/camera.png"
+                  src="{{ url_for('static', filename='images/camera.png') }}"
                   class="genre-icon"
                   alt="Genre icon"
                 />
@@ -763,7 +764,7 @@
 
           <article class="movie-card movie-card-background">
             <img
-              src="images/singing.png"
+              src="{{ url_for('static', filename='images/singing.png') }}"
               class="movie-poster"
               alt="Singin' In The Rain"
             />
@@ -772,15 +773,15 @@
             <div class="movie-meta-info">
               <div class="duration">
                 <img
-                src="images/clock.png"
-                class="genre-icon"
+                src="{{ url_for('static', filename='images/clock.png') }}"
+                class="duration-icon"
                 alt="Clock icon"
               />
                 <span >103 Minutes</span>
               </div>
               <div class="genre">
                 <img
-                  src="images/camera.png"
+                  src="{{ url_for('static', filename='images/camera.png') }}"
                   class="genre-icon"
                   alt="Genre icon"
                 />
@@ -793,7 +794,7 @@
 
       <section class="newsletter">
         <img
-          src="images/newsletter-bg.png"
+          src="{{ url_for('static', filename='images/newsletter-bg.png') }}"
           class="newsletter-bg"
           alt="Newsletter background"
         />
@@ -823,16 +824,16 @@
             </p>
           </div>
           <nav class="footer-nav">
-              <a href="./home.html" class="footer-link">Movies</a>
-              <a href="./blog-list.html" class="footer-link">Blog</a>
-              <a href="./contact-page.html" class="footer-link">Contact</a>
-              <a href="#" class="footer-link">About us</a>
+              <a href="{{ url_for('index') }}" class="footer-link">Movies</a>
+              <a href="{{ url_for('list') }}" class="footer-link">Blog</a>
+              <a href="{{ url_for('contact') }}" class="footer-link">Contact</a>
+              <a href="{{ url_for('about') }}" class="footer-link">About us</a>
           </nav>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="2" viewBox="0 0 1440 2" fill="none">
             <path d="M0 1H1440" stroke="black" stroke-opacity="0.1"/>
           </svg>
-          <img src="./images/Social.svg" class="footer-social"/>
+          <img src="{{ url_for('static', filename='images/Social.svg') }}" class="footer-social"/>
       </footer>
     </div>
   </body>

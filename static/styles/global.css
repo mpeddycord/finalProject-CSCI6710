@@ -297,7 +297,7 @@
     }
   }
   
-  .genre-icon {
+  .genre-icon, .duration-icon {
     aspect-ratio: 1.17;
     object-fit: contain;
     object-position: center;
