@@ -1,33 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog & Article - Movieland</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles/global.css') }}" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles/blog-list.css') }}">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lobster&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="page">
-    <header class="site-header">
-      <h1 class="logo">Movieland<span class="logo-dot">.</span></h1>
-      <nav class="main-nav">
-        <a href="{{ url_for('index') }}" class="nav-link">Home</a>
-        <a href="{{ url_for('index') }}" class="nav-link">Movies</a>
-        <a href="{{ url_for('list') }}" class="nav-link">Blog</a>
-        <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
-        <a href="{{ url_for('about') }}" class="nav-link">About us</a>
-      </nav>
-      <div class="social-header">
-        <img src="{{ url_for('static', filename='images/Social.svg') }}" />
-      </div>
-    </header>
+{% extends "base-alt.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
 
-    <div class="divider"></div>
+    {% block content %}
 
     <section class="hero">
-      <h1 class="hero-title">Blog & Article</h1>
+      <h1 class="hero-title">{{title}}</h1>
       <p class="hero-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
     </section>
 
@@ -54,8 +31,8 @@
             <article class="blog-post">
               <h2 class="post-title">Best Movies for Western Lovers</h2>
               <p class="post-description">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim</p>
-              <div class="author-info">
-                <img src="{{ url_for('static', filename='images/writer.png') }}" alt="Wade Warren" class="author-image">
+              <div class="post-author-info">
+                <img src="{{ url_for('static', filename='images/writer.png') }}" alt="Wade Warren" class="post-author-image">
                 <p class="author-name">Wade Warren</p>
                 <span class="divider-line"></span>
                 <div class="post-date">November 21 2024</div>
@@ -65,8 +42,8 @@
             <article class="blog-post">
               <h2 class="post-title">10 Comedy Movies To Watch This Month</h2>
               <p class="post-description">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim</p>
-              <div class="author-info">
-                <img src="{{ url_for('static', filename='images/writer2.png') }}" alt="Robert Fox" class="author-image">
+              <div class="post-author-info">
+                <img src="{{ url_for('static', filename='images/writer2.png') }}" alt="Robert Fox" class="post-author-image">
                 <p class="author-name">Robert Fox</p>
                 <span class="divider-line"></span>
                 <div class="post-date">November 21 2024</div>
@@ -76,8 +53,8 @@
             <article class="blog-post">
               <h2 class="post-title">Guide To Becoming A Movie Critic</h2>
               <p class="post-description">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim</p>
-              <div class="author-info">
-                <img src="{{ url_for('static', filename='images/writer3.png') }}" alt="Dianne Russell" class="author-image">
+              <div class="post-author-info">
+                <img src="{{ url_for('static', filename='images/writer3.png') }}" alt="Dianne Russell" class="post-author-image">
                 <p class="author-name">Dianne Russell</p>
                 <span class="divider-line"></span>
                 <div class="post-date">November 21 2024</div>
@@ -87,8 +64,8 @@
             <article class="blog-post">
               <h2 class="post-title">Best Movie Snacks for Halloween</h2>
               <p class="post-description">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim</p>
-              <div class="author-info">
-                <img src="{{ url_for('static', filename='images/writer4.png') }}" alt="Leslie Alexander" class="author-image">
+              <div class="post-author-info">
+                <img src="{{ url_for('static', filename='images/writer4.png') }}" alt="Leslie Alexander" class="post-author-image">
                 <p class="author-name">Leslie Alexander</p>
                 <span class="divider-line"></span>
                 <div class="post-date">November 21 2024</div>
@@ -98,8 +75,8 @@
             <article class="blog-post">
               <h2 class="post-title">Interview with a Vampire</h2>
               <p class="post-description">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim</p>
-              <div class="author-info">
-                <img src="{{ url_for('static', filename='images/writer5.png') }}" alt="Courtney Henry" class="author-image">
+              <div class="post-author-info">
+                <img src="{{ url_for('static', filename='images/writer5.png') }}" alt="Courtney Henry" class="post-author-image">
                 <p class="author-name">Courtney Henry</p>
                 <span class="divider-line"></span>
                 <div class="post-date">November 21 2024</div>
@@ -109,8 +86,8 @@
             <article class="blog-post">
               <h2 class="post-title">We're Hiring a Communications Assistant!</h2>
               <p class="post-description">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim</p>
-              <div class="author-info">
-                <img src="{{ url_for('static', filename='images/writer6.png') }}" alt="Albert Flores" class="author-image">
+              <div class="post-author-info">
+                <img src="{{ url_for('static', filename='images/writer6.png') }}" alt="Albert Flores" class="post-author-image">
                 <p class="author-name">Albert Flores</p>
                 <span class="divider-line"></span>
                 <div class="post-date">November 21 2024</div>
@@ -122,7 +99,7 @@
         <div class="sidebar-column">
           <div class="sidebar-content">
             <div class="other-movies-header">
-              <h2 class="section-title">Other Movies</h2>
+              <h2 class="sidebar-title">Other Movies</h2>
             </div>
             <div class="movie-grid">
               <div class="movie-images">
@@ -130,17 +107,17 @@
                 <img src="{{ url_for('static', filename='images/singing.png') }}" alt="Movie thumbnail" class="movie-thumbnail">
                 <img src="{{ url_for('static', filename='images/goodfellas.png') }}" alt="Movie thumbnail" class="movie-thumbnail">
               </div>
-              <div class="movie-details">
+              <div class="movie-details-sidebar">
                 <div class="movie-item">
-                    <h3 class="movie-title">Ratatouille</h3>
+                    <h3 class="movie-title-sidebar">Ratatouille</h3>
                     <p class="movie-author">By Andreas Paula</p>
                 </div>
                 <div class="movie-item-middle">
-                    <h3 class="movie-title">Singin' In The Rain</h3>
+                    <h3 class="movie-title-sidebar">Singin' In The Rain</h3>
                     <p class="movie-author">By Andreas Paula</p>
                 </div>
                 <div class="movie-item-bottom">
-                    <h3 class="movie-title">GoodFellas</h3>
+                    <h3 class="movie-title-sidebar">GoodFellas</h3>
                     <p class="movie-author">By Andreas Paula</p>
                 </div>
               </div>
@@ -164,34 +141,4 @@
       <a href="#" class="page-number">></a>
     </nav>
 
-    <section class="newsletter">
-      <img src="{{ url_for('static', filename='images/newsletter-bg.png') }}" alt="Newsletter background" class="newsletter-bg">
-      <div class="newsletter-content">
-        <h2 class="newsletter-title">Movie magic to your inbox</h2>
-        <p class="newsletter-description">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim</p>
-        <div class="newsletter-form">
-          <div class="email-input">Your email address...</div>
-          <button class="subscribe-button">Subscribe</button>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-branding">
-          <h2 class="logo footer-logo">Movieland<span class="logo-dot">.</span></h2>
-          <p class="footer-description">Lorem ipsum dolor sit amet, consectetuipisicing elit,</p>
-        </div>
-        <nav class="footer-nav">
-          <a href="{{ url_for('index') }}" class="footer-link">Movies</a>
-          <a href="{{ url_for('list') }}" class="footer-link">Blog</a>
-            <a href="{{ url_for('contact') }}" class="footer-link">Contact</a>
-            <a href="{{ url_for('about') }}" class="footer-link">About us</a>
-        </nav>
-      </div>
-      <div class="footer-divider"></div>
-      <img src="{{ url_for('static', filename='images/Social.svg') }}" class="footer-social"/>
-    </footer>
-  </div>
-</body>
-</html>
+    {% endblock %}
