@@ -1,1 +1,4 @@
-__pycache__/home.cpython-311.pyc
+/app/__pycache__
+.env
+/__pycache__
+/app/main/__pycache__

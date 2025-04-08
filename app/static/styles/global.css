@@ -2737,7 +2737,7 @@
     }
   }
   
-  #submit {
+  .submit-button {
     border-radius: 16px;
     background-color: #000;
     align-self: start;
