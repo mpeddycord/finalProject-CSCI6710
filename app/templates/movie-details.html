@@ -6,24 +6,24 @@
           <div class="movie-title-section">
             <div class="title-container">
               <div class="title-wrapper">
-                <h1 class="movie-title">Star Wars</h1>
+                <h1 class="movie-title">{{movie.title}}</h1>
                 <div class="author-section">
                   <div class="author-container">
                     <img
-                      src="{{ url_for('static', filename='images/author.png') }}"
+                      src="{{ url_for('static', filename=movie.author.avatar_url) }}"
                       alt="Author avatar"
                       class="author-avatar"
                     />
                     <div class="movie-author-info">
-                      <p class="author-name">John Smith</p>
-                      <p class="publish-date">March 15 2025</p>
+                      <p class="author-name">{{movie.author.name}}</p>
+                      <p class="publish-date">{{movie.post_date.strftime('%B %-d, %Y')}}</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="runtime-container">
                 <p class="runtime-label">RUN TIME</p>
-                <p class="runtime-value">122 Minutes</p>
+                <p class="runtime-value">{{movie.runtime}} Minutes</p>
               </div>
             </div>
 
@@ -33,7 +33,7 @@
                 alt="Genre icon"
                 class="genre-icon"
               />
-              <span>Sci-Fi</p>
+              <span>{{movie.genre}}</p>
             </div>
           </div>
           <div class="action-buttons">
@@ -60,7 +60,7 @@
           <div class="info-columns">
             <div class="movie-poster-column">
               <img
-                src="{{ url_for('static', filename='images/big-star-wars.png') }}"
+                src="{{ url_for('static', filename=movie.image_url) }}"
                 alt="Movie poster"
                 class="movie-poster"
               />
@@ -72,27 +72,27 @@
                     <h2 class="details-title">Movie Information</h2>
                     <p class="release-date-label">Release Date</p>
                   </div>
-                  <p class="release-date-value">1977</p>
+                  <p class="release-date-value">{{movie.release_date}}</p>
                 </div>
                 <div class="movie-details-divider"></div> 
                 <div class="director-row">
                   <p class="director-label">Director</p>
-                  <p class="director-value">George Lucas</p>
+                  <p class="director-value">{{movie.director}}</p>
                 </div>
                 <div class="movie-details-divider"></div>
                 <div class="box-office-row">
                   <p class="box-office-label">Box Office Gross</p>
-                  <p class="box-office-value">$775,398,507</p>
+                  <p class="box-office-value">${{movie.box_office}}</p>
                 </div>
                 <div class="movie-details-divider"></div>
                 <div class="budget-row">
                     <p class="budget-label">Budget</p>
-                    <p class="budget-value">$11,000,000</p>
+                    <p class="budget-value">${{movie.budget}}</p>
                 </div>
                 <div class="movie-details-divider"></div>
                 <div class="rating-row">
                   <p class="rating-label">Rating</p>
-                  <p class="rating-value">PG</p>
+                  <p class="rating-value">{{movie.rating}}</p>
                 </div>
                 <div class="movie-details-divider"></div>
                 <p class="details-note">
@@ -114,7 +114,7 @@
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
 
-        <section class="review-section" data-el="div-2">
+        <section class="review-section">
           <div class="review-columns">
             <div class="review-content">
               <h2 class="review-title">Review</h2>
@@ -161,47 +161,38 @@
               </div>
               <div class="divider"></div>
             </div>
-                
-            <div class="other-movies-column">
-              <div class="other-movies-container">
-                <h3 class="other-movies-title">Other Movies</h3>
-                <div class="movie-cards-row">
-                  <div class="movie-cards-images">
-                    <img
-                    src="{{ url_for('static', filename='images/ratatouille.png') }}"
-                    alt="Ratatouille"
-                    class="movie-card-image-top"
-                  />
-                    <img
-                      src="{{ url_for('static', filename='images/singing.png') }}"
-                      alt="Singin' In The Rain"
-                      class="movie-card-image-middle"
-                    />
-                    <img
-                      src="{{ url_for('static', filename='images/goodfellas.png') }}"
-                      alt="GoodFellas"
-                      class="movie-card-image-bottom"
-                    />
+
+            <div class="sidebar-column">
+              <div class="sidebar-content">
+                <div class="other-movies-header">
+                  <h2 class="sidebar-title">Other Movies</h2>
+                </div>
+                <div class="movie-grid">
+                  <div class="movie-images">
+                    {% for other_movie in other_movies %}
+                    <a href="/movie/{{other_movie.id}}" class="movie-link"><img
+                      src="{{ url_for('static', filename=other_movie.image_url) }}"
+                      alt={{other_movie.title}}
+                      class="movie-thumbnail"
+                    /></a>
+                  {% endfor %}
                   </div>
-                  <div class="movie-cards-info">
-                    <h4 class="movie-card-title">Ratatouille</h4>
-                    <p class="movie-card-author">By Andreas Paula</p>
-                    <h4 class="movie-card-title-middle">Singin' In The Rain</h4>
-                    <p class="movie-card-author">By Andreas Paula</p>
-                    <h4 class="movie-card-title-bottom">GoodFellas</h4>
-                    <p class="movie-card-author">By Andreas Paula</p>
+                  <div class="movie-details-sidebar">
+                    {% for other_movie in other_movies %}
+                    <div class="movie-item">
+                      <a href="/movie/{{other_movie.id}}" class="movie-link"><h3 class="movie-title-sidebar">{{other_movie.title}}</h3></a>
+                    <p class="movie-author">By {{other_movie.author.name}}</p>
+                  </div>
+                  {% endfor %}
+                </div>
                   </div>
                 </div>
-                <div class="promo-card">
-                  <img
-                  src="{{ url_for('static', filename='images/ad.png') }}"
-                  class="ad"
-                  alt="Ad"
-                />
+    
+                <div class="promo-banner">
+                  <img src="{{ url_for('static', filename='images/ad.png') }}" alt="Promotional banner" class="promo-image">
                 </div>
               </div>
             </div>
-          </div>
         </section>
 
         <h2 class="best-moments-title">Top 3 Best Moments</h2>

@@ -46,231 +46,71 @@
           </div>
   
           <div class="movie-grid">
-            <article class="movie-card movie-card-background">
-              <img
-                src="{{ url_for('static', filename='images/et.png') }}"
-                class="movie-poster"
-                alt="E.T."
-              />
-              <h3 class="movie-name">E.T.</h3>
-  
-              <div class="movie-meta-info">
-                <div class="duration">
-                  <img
-                  src="{{ url_for('static', filename='images/clock.png') }}"
-                  class="duration-icon"
-                  alt="Clock icon"
+            {% for bottom_movie in bottom_movies_1 %}
+            <a href="/movie/{{bottom_movie.id}}" class="movie-link">
+              <article class="movie-card movie-card-background">
+                <img
+                  src="{{ url_for('static', filename=bottom_movie.image_url) }}"
+                  class="movie-poster"
+                  alt={{bottom_movie.title}}
                 />
-                  <span >115 Minutes</span>
-                </div>
-                <div class="genre">
-                  <img
-                    src="{{ url_for('static', filename='images/camera.png') }}"
-                    class="genre-icon"
-                    alt="Genre icon"
+                <h3 class="movie-name">{{bottom_movie.title}}</h3>
+    
+                <div class="movie-meta-info">
+                  <div class="duration">
+                    <img
+                    src="{{ url_for('static', filename='images/clock.png') }}"
+                    class="duration-icon"
+                    alt="Clock icon"
                   />
-                  <span>Sci-Fi</span>
+                    <span >{{bottom_movie.runtime}} Minutes</span>
+                  </div>
+                  <div class="genre">
+                    <img
+                      src="{{ url_for('static', filename='images/camera.png') }}"
+                      class="genre-icon"
+                      alt="Genre icon"
+                    />
+                    <span>{{bottom_movie.genre}}</span>
+                  </div>
                 </div>
-              </div>
-            </article>
-  
-            <article class="movie-card movie-card-background">
-              <img
-                src="{{ url_for('static', filename='images/airplane.png') }}"
-                class="movie-poster"
-                alt="Airplane"
-              />
-              <h3 class="movie-name">Airplane</h3>
-  
-              <div class="movie-meta-info">
-                <div class="duration">
-                  <img
-                  src="{{ url_for('static', filename='images/clock.png') }}"
-                  class="duration-icon"
-                  alt="Clock icon"
-                />
-                  <span>88 Minutes</span>
-                </div>
-                <div class="genre">
-                  <img
-                    src="{{ url_for('static', filename='images/camera.png') }}"
-                    class="genre-icon"
-                    alt="Genre icon"
-                  />
-                  <span>Comedy</span>
-                </div>
-              </div>
-            </article>
-  
-            <article class="movie-card movie-card-background">
-              <img
-                src="{{ url_for('static', filename='images/mario.png') }}"
-                class="movie-poster"
-                alt="Super Mario Bros."
-              />
-              <h3 class="movie-name">Super Mario Bros.</h3>
-  
-              <div class="movie-meta-info">
-                <div class="duration">
-                  <img
-                  src="{{ url_for('static', filename='images/clock.png') }}"
-                  class="duration-icon"
-                  alt="Clock icon"
-                />
-                  <span >92 Minutes</span>
-                </div>
-                <div class="genre">
-                  <img
-                    src="{{ url_for('static', filename='images/camera.png') }}"
-                    class="genre-icon"
-                    alt="Genre icon"
-                  />
-                  <span>Family</span>
-                </div>
-              </div>
-            </article>
-  
-            <article class="movie-card movie-card-background">
-              <img
-                src="{{ url_for('static', filename='images/lambs.png') }}"
-                class="movie-poster"
-                alt="The Silence of the Lambs"
-              />
-              <h3 class="movie-name">The Silence of the Lambs</h3>
-  
-              <div class="movie-meta-info">
-                <div class="duration">
-                  <img
-                  src="{{ url_for('static', filename='images/clock.png') }}"
-                  class="duration-icon"
-                  alt="Clock icon"
-                />
-                  <span >118 Minutes</span>
-                </div>
-                <div class="genre">
-                  <img
-                    src="{{ url_for('static', filename='images/camera.png') }}"
-                    class="genre-icon"
-                    alt="Genre icon"
-                  />
-                  <span>Thriller</span>
-                </div>
-              </div>
-            </article>
+              </article>
+            </a>
+            {% endfor %}
           </div>
-  
+
           <div class="movie-grid">
-            <article class="movie-card movie-card-background">
-              <img
-                src="{{ url_for('static', filename='images/blade-runner.png') }}"
-                class="movie-poster"
-                alt="Blade Runner"
-              />
-              <h3 class="movie-name">Blade Runner</h3>
-  
-              <div class="movie-meta-info">
-                <div class="duration">
-                  <img
-                  src="{{ url_for('static', filename='images/clock.png') }}"
-                  class="duration-icon"
-                  alt="Clock icon"
+            {% for bottom_movie in bottom_movies_2 %}
+            <a href="/movie/{{bottom_movie.id}}" class="movie-link">
+              <article class="movie-card movie-card-background">
+                <img
+                  src="{{ url_for('static', filename=bottom_movie.image_url) }}"
+                  class="movie-poster"
+                  alt={{bottom_movie.title}}
                 />
-                  <span >117 Minutes</span>
-                </div>
-                <div class="genre">
-                  <img
-                    src="{{ url_for('static', filename='images/camera.png') }}"
-                    class="genre-icon"
-                    alt="Genre icon"
+                <h3 class="movie-name">{{bottom_movie.title}}</h3>
+    
+                <div class="movie-meta-info">
+                  <div class="duration">
+                    <img
+                    src="{{ url_for('static', filename='images/clock.png') }}"
+                    class="duration-icon"
+                    alt="Clock icon"
                   />
-                  <span>Sci-Fi</span>
+                    <span >{{bottom_movie.runtime}} Minutes</span>
+                  </div>
+                  <div class="genre">
+                    <img
+                      src="{{ url_for('static', filename='images/camera.png') }}"
+                      class="genre-icon"
+                      alt="Genre icon"
+                    />
+                    <span>{{bottom_movie.genre}}</span>
+                  </div>
                 </div>
-              </div>
-            </article>
-  
-            <article class="movie-card movie-card-background">
-              <img
-                src="{{ url_for('static', filename='images/good-bad-ugly.png') }}"
-                class="movie-poster"
-                alt="The Good, The Bad, and the Ugly"
-              />
-              <h3 class="movie-name">The Good, The Bad, and the Ugly</h3>
-  
-              <div class="movie-meta-info">
-                <div class="duration">
-                  <img
-                  src="{{ url_for('static', filename='images/clock.png') }}"
-                  class="duration-icon"
-                  alt="Clock icon"
-                />
-                  <span >178 Minutes</span>
-                </div>
-                <div class="genre">
-                  <img
-                    src="{{ url_for('static', filename='images/camera.png') }}"
-                    class="genre-icon"
-                    alt="Genre icon"
-                  />
-                  <span>Western</span>
-                </div>
-              </div>
-            </article>
-  
-            <article class="movie-card movie-card-background">
-              <img
-                src="{{ url_for('static', filename='images/anchorman.png') }}"
-                class="movie-poster"
-                alt="Anchorman"
-              />
-              <h3 class="movie-name">Anchorman</h3>
-  
-              <div class="movie-meta-info">
-                <div class="duration">
-                  <img
-                  src="{{ url_for('static', filename='images/clock.png') }}"
-                  class="duration-icon"
-                  alt="Clock icon"
-                />
-                  <span >94 Minutes</span>
-                </div>
-                <div class="genre">
-                  <img
-                    src="{{ url_for('static', filename='images/camera.png') }}"
-                    class="genre-icon"
-                    alt="Genre icon"
-                  />
-                  <span>Comedy</span>
-                </div>
-              </div>
-            </article>
-  
-            <article class="movie-card movie-card-background">
-              <img
-                src="{{ url_for('static', filename='images/singing.png') }}"
-                class="movie-poster"
-                alt="Singin' In The Rain"
-              />
-              <h3 class="movie-name">Singin' In The Rain</h3>
-  
-              <div class="movie-meta-info">
-                <div class="duration">
-                  <img
-                  src="{{ url_for('static', filename='images/clock.png') }}"
-                  class="duration-icon"
-                  alt="Clock icon"
-                />
-                  <span >103 Minutes</span>
-                </div>
-                <div class="genre">
-                  <img
-                    src="{{ url_for('static', filename='images/camera.png') }}"
-                    class="genre-icon"
-                    alt="Genre icon"
-                  />
-                  <span>Musical</span>
-                </div>
-              </div>
-            </article>
+              </article>
+              </a>
+            {% endfor %}
           </div>
         </section>
     

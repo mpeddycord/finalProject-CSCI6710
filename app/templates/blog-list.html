@@ -12,89 +12,35 @@
       <button class="search-button">Search</button>
     </div>
 
-    <main class="content-grid" space="40">
-      <div class="grid-layout">
-        <div class="image-column">
-          <div class="blog-images">
-            <img src="{{ url_for('static', filename='images/good-bad-ugly.png') }}" alt="Blog post image" class="blog-image">
-            <img src="{{ url_for('static', filename='images/anchorman.png') }}" alt="Blog post image" class="blog-image">
-            <img src="{{ url_for('static', filename='images/ebert1.png') }}" alt="Blog post image" class="blog-image">
-            <img src="{{ url_for('static', filename='images/nachos.png') }}" alt="Blog post image" class="blog-image">
-            <img src="{{ url_for('static', filename='images/commander.png') }}" alt="Blog post image" class="blog-image">
-            <img src="{{ url_for('static', filename='images/assistant.png') }}" alt="Blog post image" class="blog-image">
+    <section class="content-grid">
+      <div class="blog-columns">
+        <div class="blog-content">
+          {% for post in posts %}
+          <div class="grid-layout">
+            <div class="image-column">
+              <div class="blog-images">
+                <a href='/post/{{post.id}}'>
+                  <img src="{{ url_for('static', filename=post.image_url) }}" alt="Blog post image" class="blog-image">
+                </a>
+              </div>
+            </div>
+            <div class="content-column">
+              <div class="blog-posts">
+                <article class="blog-post">
+                  <h2 class="post-title"><a href='/post/{{post.id}}' class="post-link">{{post.title}}</a></h2>
+                  <p class="post-description">{{post.stub}}</p>
+                  <div class="post-author-info">
+                    <img src="{{ url_for('static', filename=post.author.avatar_url) }}" alt={{post.author.name}} class="post-author-image">
+                    <p class="author-name">{{post.author.name}}</p>
+                    <span class="divider-line"></span>
+                    <div class="post-date">{{post.date_created.strftime('%B %-d, %Y')}}</div>
+                  </div>
+                </article>
+              </div>
+            </div>
           </div>
+          {% endfor %}
         </div>
-
-        <div class="content-column">
-          <div class="blog-posts">
-            <article class="blog-post">
-              <h2 class="post-title">Best Movies for Western Lovers</h2>
-              <p class="post-description">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim</p>
-              <div class="post-author-info">
-                <img src="{{ url_for('static', filename='images/writer.png') }}" alt="Wade Warren" class="post-author-image">
-                <p class="author-name">Wade Warren</p>
-                <span class="divider-line"></span>
-                <div class="post-date">November 21 2024</div>
-              </div>
-            </article>
-
-            <article class="blog-post">
-              <h2 class="post-title">10 Comedy Movies To Watch This Month</h2>
-              <p class="post-description">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim</p>
-              <div class="post-author-info">
-                <img src="{{ url_for('static', filename='images/writer2.png') }}" alt="Robert Fox" class="post-author-image">
-                <p class="author-name">Robert Fox</p>
-                <span class="divider-line"></span>
-                <div class="post-date">November 21 2024</div>
-              </div>
-            </article>
-
-            <article class="blog-post">
-              <h2 class="post-title">Guide To Becoming A Movie Critic</h2>
-              <p class="post-description">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim</p>
-              <div class="post-author-info">
-                <img src="{{ url_for('static', filename='images/writer3.png') }}" alt="Dianne Russell" class="post-author-image">
-                <p class="author-name">Dianne Russell</p>
-                <span class="divider-line"></span>
-                <div class="post-date">November 21 2024</div>
-              </div>
-            </article>
-
-            <article class="blog-post">
-              <h2 class="post-title">Best Movie Snacks for Halloween</h2>
-              <p class="post-description">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim</p>
-              <div class="post-author-info">
-                <img src="{{ url_for('static', filename='images/writer4.png') }}" alt="Leslie Alexander" class="post-author-image">
-                <p class="author-name">Leslie Alexander</p>
-                <span class="divider-line"></span>
-                <div class="post-date">November 21 2024</div>
-              </div>
-            </article>
-
-            <article class="blog-post">
-              <h2 class="post-title">Interview with a Vampire</h2>
-              <p class="post-description">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim</p>
-              <div class="post-author-info">
-                <img src="{{ url_for('static', filename='images/writer5.png') }}" alt="Courtney Henry" class="post-author-image">
-                <p class="author-name">Courtney Henry</p>
-                <span class="divider-line"></span>
-                <div class="post-date">November 21 2024</div>
-              </div>
-            </article>
-
-            <article class="blog-post">
-              <h2 class="post-title">We're Hiring a Communications Assistant!</h2>
-              <p class="post-description">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim</p>
-              <div class="post-author-info">
-                <img src="{{ url_for('static', filename='images/writer6.png') }}" alt="Albert Flores" class="post-author-image">
-                <p class="author-name">Albert Flores</p>
-                <span class="divider-line"></span>
-                <div class="post-date">November 21 2024</div>
-              </div>
-            </article>
-          </div>
-        </div>
-
         <div class="sidebar-column">
           <div class="sidebar-content">
             <div class="other-movies-header">
@@ -102,33 +48,32 @@
             </div>
             <div class="movie-grid">
               <div class="movie-images">
-                <img src="{{ url_for('static', filename='images/ratatouille.png') }}" alt="Movie thumbnail" class="movie-thumbnail">
-                <img src="{{ url_for('static', filename='images/singing.png') }}" alt="Movie thumbnail" class="movie-thumbnail">
-                <img src="{{ url_for('static', filename='images/goodfellas.png') }}" alt="Movie thumbnail" class="movie-thumbnail">
+                {% for other_movie in other_movies %}
+                <a href="/movie/{{other_movie.id}}" class="movie-link"><img
+                  src="{{ url_for('static', filename=other_movie.image_url) }}"
+                  alt={{other_movie.title}}
+                  class="movie-thumbnail"
+                /></a>
+              {% endfor %}
               </div>
               <div class="movie-details-sidebar">
+                {% for other_movie in other_movies %}
                 <div class="movie-item">
-                    <h3 class="movie-title-sidebar">Ratatouille</h3>
-                    <p class="movie-author">By Andreas Paula</p>
-                </div>
-                <div class="movie-item-middle">
-                    <h3 class="movie-title-sidebar">Singin' In The Rain</h3>
-                    <p class="movie-author">By Andreas Paula</p>
-                </div>
-                <div class="movie-item-bottom">
-                    <h3 class="movie-title-sidebar">GoodFellas</h3>
-                    <p class="movie-author">By Andreas Paula</p>
-                </div>
+                  <a href="/movie/{{other_movie.id}}" class="movie-link"><h3 class="movie-title-sidebar">{{other_movie.title}}</h3></a>
+                <p class="movie-author">By {{other_movie.author.name}}</p>
+              </div>
+              {% endfor %}
+            </div>
               </div>
             </div>
-
+  
             <div class="promo-banner">
               <img src="{{ url_for('static', filename='images/ad.png') }}" alt="Promotional banner" class="promo-image">
             </div>
           </div>
-        </div>
       </div>
-    </main>
+
+      </section>
 
     <nav class="pagination">
       <a href="#" class="page-number active">1</a>

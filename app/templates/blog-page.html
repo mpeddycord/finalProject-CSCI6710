@@ -4,27 +4,24 @@
 
       <section class="content-container">
         <article class="blog-post">
-          <h1 class="blog-post-title">Guide To Becoming A Movie Critic</h1>
+          <h1 class="blog-post-title">{{post.title}}</h1>
 
           <div class="blog-post-author-info">
             <div class="author-profile">
               <img
-                src="{{ url_for('static', filename='images/author.png') }}"
+                src="{{ url_for('static', filename=post.author.avatar_url) }}"
                 alt="Author profile picture"
                 class="author-image"
               />
-              <span class="author-name">John Smith</span>
+              <span class="author-name">{{post.author.name}}</span>
             </div>
             <div class="post-date">
-              <span class="date-text">March 15 2025</span>
+              <span class="date-text">{{post.date_created.strftime('%B %-d, %Y')}}</span>
             </div>
           </div>
 
           <p class="post-intro">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            ac ultrices odio. Nulla at congue diam, at dignissim turpis. Ut
-            vehicula sed velit a faucibus. In feugiat vestibulum velit vel
-            pulvinar.
+           {{post.stub}}
           </p>
 
           <img

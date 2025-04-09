@@ -62,13 +62,14 @@
             </div>
     
             <div class="movie-grid">
-              <article class="movie-card">
+              {% for bottom_movie in bottom_movies_1 %}
+              <a href="/movie/{{bottom_movie.id}}" class="movie-link"><article class="movie-card movie-card-background">
                 <img
-                  src="{{ url_for('static', filename='images/et.png') }}"
+                  src="{{ url_for('static', filename=bottom_movie.image_url) }}"
                   class="movie-poster"
-                  alt="E.T."
+                  alt={{bottom_movie.title}}
                 />
-                <h3 class="movie-name">E.T.</h3>
+                <h3 class="movie-name">{{bottom_movie.title}}</h3>
     
                 <div class="movie-meta-info">
                   <div class="duration">
@@ -77,7 +78,7 @@
                     class="duration-icon"
                     alt="Clock icon"
                   />
-                    <span >115 Minutes</span>
+                    <span >{{bottom_movie.runtime}} Minutes</span>
                   </div>
                   <div class="genre">
                     <img
@@ -85,94 +86,11 @@
                       class="genre-icon"
                       alt="Genre icon"
                     />
-                    <span>Sci-Fi</span>
+                    <span>{{bottom_movie.genre}}</span>
                   </div>
                 </div>
-              </article>
-    
-              <article class="movie-card">
-                <img
-                  src="{{ url_for('static', filename='images/airplane.png') }}"
-                  class="movie-poster"
-                  alt="Airplane"
-                />
-                <h3 class="movie-name">Airplane</h3>
-    
-                <div class="movie-meta-info">
-                  <div class="duration">
-                    <img
-                    src="{{ url_for('static', filename='images/clock.png') }}"
-                    class="duration-icon"
-                    alt="Clock icon"
-                  />
-                    <span >88 Minutes</span>
-                  </div>
-                  <div class="genre">
-                    <img
-                      src="{{ url_for('static', filename='images/camera.png') }}"
-                      class="genre-icon"
-                      alt="Genre icon"
-                    />
-                    <span>Comedy</span>
-                  </div>
-                </div>
-              </article>
-    
-              <article class="movie-card">
-                <img
-                  src="{{ url_for('static', filename='images/mario.png') }}"
-                  class="movie-poster"
-                  alt="Super Mario Bros."
-                />
-                <h3 class="movie-name">Super Mario Bros.</h3>
-    
-                <div class="movie-meta-info">
-                  <div class="duration">
-                    <img
-                    src="{{ url_for('static', filename='images/camera.png') }}"
-                    class="duration-icon"
-                    alt="Clock icon"
-                  />
-                    <span >92 Minutes</span>
-                  </div>
-                  <div class="genre">
-                    <img
-                      src="{{ url_for('static', filename='images/camera.png') }}"
-                      class="genre-icon"
-                      alt="Genre icon"
-                    />
-                    <span>Family</span>
-                  </div>
-                </div>
-              </article>
-    
-              <article class="movie-card">
-                <img
-                  src="{{ url_for('static', filename='images/lambs.png') }}"
-                  class="movie-poster"
-                  alt="The Silence of the Lambs"
-                />
-                <h3 class="movie-name">The Silence of the Lambs</h3>
-    
-                <div class="movie-meta-info">
-                  <div class="duration">
-                    <img
-                    src="{{ url_for('static', filename='images/clock.png') }}"
-                    class="duration-icon"
-                    alt="Clock icon"
-                  />
-                    <span >118 Minutes</span>
-                  </div>
-                  <div class="genre">
-                    <img
-                      src="{{ url_for('static', filename='images/camera.png') }}"
-                      class="genre-icon"
-                      alt="Genre icon"
-                    />
-                    <span>Thriller</span>
-                  </div>
-                </div>
-              </article>`
+              </article></a>
+              {% endfor %}
             </div>
           </section>
     
