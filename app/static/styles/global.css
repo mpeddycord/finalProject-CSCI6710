@@ -1603,7 +1603,7 @@
     flex-direction: column;
     align-items: stretch;
     line-height: normal;
-    width: 43%;
+    width: 60%;
     margin-left: 20px;
   }
   
@@ -1615,7 +1615,7 @@
   
   .blog-posts {
     display: flex;
-    margin-top: 13px;
+    /* margin-top: 13px; */
     width: 100%;
     flex-direction: column;
     align-items: start;
@@ -1718,7 +1718,7 @@
     flex-direction: column;
     align-items: stretch;
     line-height: normal;
-    width: 33%;
+    width: 25%;
     margin-left: 20px;
   }
   
@@ -3397,7 +3397,7 @@
     font-weight: 400;
     line-height: 28px;
     text-align: center;
-    margin-top: 250px;
+    margin-top: 200px;
   }
 
   @media (max-width: 991px) {
@@ -3456,7 +3456,7 @@
 
   .review-content, .blog-content {
     display: flex;
-    width: 100%;
+    width: 75%;
     flex-direction: column;
     align-items: start;
     font-family:
@@ -3552,9 +3552,8 @@
   .cons-item {
     display: flex;
     margin-top: 29px;
-    width: 264px;
-    max-width: 100%;
-    flex-direction: column;
+    gap: 32px;
+    align-items: stretch;
   }
 
   .cons-icon {
@@ -4118,3 +4117,71 @@
     text-decoration: none;
     color: black;
   }
+
+  .pagination {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+}
+
+.page-item:first-child .page-link {
+  border-top-left-radius: .25rem;
+  border-bottom-left-radius: .25rem;
+}
+
+.page-link {
+  padding: .375rem .75rem;
+}
+.page-link {
+  position: relative;
+  display: block;
+  color: black;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.page-link:hover {
+  z-index: 2;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.subscribe-button {
+  border-radius: 16px;
+  background-color: #000;
+  align-self: start;
+  margin-top: 10px;
+  padding: 20px 63px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: -0.32px;
+  border: none;
+  cursor: pointer;
+  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.form-input-subscribe {
+  border-radius: 16px;
+  background-color: #fff;
+  border: 0;
+  outline: 0;
+  margin-top: 12px;
+  padding: 19px 20px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.28px;
+  line-height: 24px;
+  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}

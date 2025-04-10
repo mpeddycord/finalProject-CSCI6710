@@ -96,8 +96,7 @@
                 </div>
                 <div class="movie-details-divider"></div>
                 <p class="details-note">
-                  adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua.
+                  {{movie.description}}
                 </p>
               </div>
             </div>
@@ -119,47 +118,21 @@
             <div class="review-content">
               <h2 class="review-title">Review</h2>
               <h3 class="pros-title">Pros</h3>
+              {% for pro in pros %}
               <div class="pros-item">
                 <span class="pros-icon">+</span>
-                <p class="pros-text">Lorem ipsum dolor sit amet</p>
+                <p class="pros-text">{{pro.description}}</p>
               </div>
               <div class="divider"></div>
-              <div class="pros-item">
-                <span class="pros-icon">+</span>
-                <p class="pros-text">Lorem ipsum dolor sit amet</p>
-              </div>
-              <div class="divider"></div>
-              <div class="pros-item">
-                <span class="pros-icon">+</span>
-                <p class="pros-text">Lorem ipsum dolor sit amet</p>
-              </div>
-              <div class="divider"></div>
-              <div class="pros-item">
-                <span class="pros-icon">+</span>
-                <p class="pros-text">Lorem ipsum dolor sit amet</p>
-              </div>
-              <div class="divider"></div>
-              <div class="pros-item">
-                <span class="pros-icon">+</span>
-                <p class="pros-text">Lorem ipsum dolor sit amet</p>
-              </div>
-              <div class="divider"></div>
+              {% endfor %}
               <h3 class="cons-title">Cons</h3>
+              {% for con in cons %}
               <div class="cons-item">
                 <span class="cons-icon">-</span>
-                <p class="cons-text">Lorem ipsum dolor sit amet</p>
+                <p class="cons-text">{{con.description}}</p>
               </div>
               <div class="divider"></div>
-              <div class="cons-item">
-                <span class="cons-icon">-</span>
-                <p class="cons-text">Lorem ipsum dolor sit amet</p>
-              </div>
-              <div class="divider"></div>
-              <div class="cons-item">
-                <span class="cons-icon">-</span>
-                <p class="cons-text">Lorem ipsum dolor sit amet</p>
-              </div>
-              <div class="divider"></div>
+              {% endfor %}
             </div>
 
             <div class="sidebar-column">
@@ -196,69 +169,19 @@
         </section>
 
         <h2 class="best-moments-title">Top 3 Best Moments</h2>
+        {% for movie_moment in movie_moments %}
 
         <div class="moment-header">
           <div class="moment-number"></div>
-          <h3 class="moment-title">Lorem ipsum dolor sit amet</h3>
+          <h3 class="moment-title">{{movie_moment.title}}</h3>
         </div>
 
         <p class="moment-description">
-          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-          fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
-          sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
-          sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
-          tempora incidunt ut labore et dolore magnam aliquam quaerat
-          voluptatem.
-        </p>
-
-        <img
-          src="{{ url_for('static', filename='images/star-wars-scene.png') }}"
-          alt="Movie moment"
-          class="moment-image"
-        />
-
-        <p class="moment-description">
-          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-          fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
-          sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
-          sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
-          tempora incidunt ut labore et dolore magnam aliquam quaerat
-          voluptatem.
+          {{movie_moment.description}}
         </p>
 
         <div class="divider"></div>
-
-        <div class="moment-header">
-          <div class="moment-number"></div>
-          <h3 class="moment-title">2. Lorem ipsum dolor sit amet</h3>
-        </div>
-
-        <p class="moment-description">
-          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-          fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
-          sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
-          sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
-          tempora incidunt ut labore et dolore magnam aliquam quaerat
-          voluptatem.
-        </p>
-
-        <div class="divider"></div>
-
-        <div class="moment-header">
-          <div class="moment-number"></div>
-          <h3 class="moment-title">3. Lorem ipsum dolor sit amet</h3>
-        </div>
-
-        <p class="moment-description">
-          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-          fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
-          sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
-          sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
-          tempora incidunt ut labore et dolore magnam aliquam quaerat
-          voluptatem.
-        </p>
-
-        <div class="divider"></div>
+        {% endfor %}
       </section>
 
     {% endblock %}

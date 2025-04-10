@@ -11,3 +11,7 @@ class ContactForm(FlaskForm):
     inquiry_type = SelectField('Inquiry type', choices=[('Advertising', 'Advertising'), ('Site Issues', 'Site Issues')])
     message = TextAreaField('Your Message', validators=[DataRequired()])
     submit = SubmitField('Submit')
+
+class EmailSubscribeForm(FlaskForm):
+    email = StringField('Email Address', validators=[Email()], render_kw={"placeholder": "Your email address..."})
+    submit = SubmitField('Subscribe')

@@ -10,11 +10,9 @@
                 <span class="emoji">🔥</span>
                 <span class="hot-label">Hot Movie</span>
               </div>
-              <h2 class="movie-title">The Hangover</h2>
+              <h2 class="movie-title">{{top_movie.title}}</h2>
               <p class="movie-description">
-                Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqut enim
-                ad minim
+                {{top_movie.description}}
               </p>
               <div class="movie-meta">
                 <div class="duration">
@@ -23,7 +21,7 @@
                   class="duration-icon"
                   alt="Clock icon"
                 />
-                  <span >100 Minutes</span>
+                  <span >{{top_movie.runtime}} Minutes</span>
                 </div>
                 <div class="genre">
                   <img
@@ -31,7 +29,7 @@
                     class="genre-icon"
                     alt="Genre icon"
                   />
-                  <span>Comedy</span>
+                  <span>{{top_movie.genre}}</span>
                 </div>
               </div>
               <div class="movie-footer">
@@ -42,18 +40,18 @@
                     alt="Author"
                   />
                   <div class="author-info">
-                    <h3 class="author-name">John Smith</h3>
-                    <p class="publish-date">March 15 2025</p>
+                    <h3 class="author-name">{{top_movie.author.name}}</h3>
+                    <p class="publish-date">{{top_movie.post_date.strftime('%B %-d, %Y')}}</p>
                   </div>
                 </div>
-                <a href="#" class="cta-button">View Movies</a>
+                <a href="/movie/{{top_movie.id}}" class="cta-button">View Movie</a>
               </div>
             </div>
           </div>
           <div class="hero-right">
             <div class="hero-image-container">
               <img
-                src="{{ url_for('static', filename='images/hangover.png') }}"
+                src="{{ url_for('static', filename=top_movie.image_url) }}"
                 class="hero-background"
                 alt="Movie background"
               />
@@ -82,8 +80,9 @@
       <section class="best-movies">
         <h2 class="section-title-main centered">The best movies, period</h2>
         <p class="section-description centered">
-          Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqut enim ad minim
+          Discover your next cinematic obsession! Search a vast library of blockbusters, indie gems, timeless classics, and hidden treasures.
+           Whether you're in the mood for heart-pounding action, 
+          heartwarming tales, or spine-tingling thrills, find the perfect movie to light up your screen.
         </p>
 
         <div class="movie-grid">
@@ -201,9 +200,7 @@
               movie, just a click away
             </h2>
             <p class="cta-description">
-              Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad
-              minim
+              Search for unforgettable films, from blockbuster hits to hidden gems. Your next movie adventure starts here!
             </p>
             <a href="#" class="cta-button">Learn More</a>
           </div>
@@ -222,8 +219,7 @@
             Check out @movieland on Instagram
           </h2>
           <p class="section-description centered">
-            Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqut enim ad minim
+            Follow us on Instagram for all things movies—exclusive updates, hidden gems, and the latest buzz. Don't miss out!
           </p>
   
           <div class="instagram-profiles">

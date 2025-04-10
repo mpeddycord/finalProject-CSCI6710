@@ -38,9 +38,7 @@
             </div>
             <div class="recommendations-description">
               <p>
-                Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad
-                minim
+                Looking for a movie? Dive in and find everything from big hits to hidden gems. Your next watch is waiting!
               </p>
             </div>
           </div>
@@ -123,16 +121,18 @@
             <div class="newsletter-content">
               <h2 class="newsletter-title">Movie magic to your inbox</h2>
               <p class="newsletter-description">
-                Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqut enim ad minim
+                Love movies? Sign up for our newsletter and never miss the latest hits or hidden gems!
               </p>
-              <div class="newsletter-form">
-                <input
-                  type="email"
-                  placeholder="Your email address..."
-                  class="email-input"
-                />
-                <button type="submit" class="subscribe-button">Subscribe</button>
+              <div>
+                <form class="newsletter-form" method="post">
+                  {{form.hidden_tag()}}
+                  <div class="form-group"> 
+                    {{form.email(class_="form-input-subscribe")}}
+                  </div>
+                  <div class="form-group"> 
+                    {{form.submit(class_='subscribe-button')}}
+                  </div>
+                </form>
               </div>
             </div>
           </section>

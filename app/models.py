@@ -31,11 +31,28 @@ class Movie(db.Model):
     runtime: so.Mapped[str] = so.mapped_column(sa.String(25))
     image_url: so.Mapped[str] = so.mapped_column(sa.String(255), index=True)
     position: so.Mapped[str] = so.mapped_column(sa.String(10))
-    rating: so.Mapped[str] = so.mapped_column(sa.String(4))
+    rating: so.Mapped[str] = so.mapped_column(sa.String(5))
     box_office: so.Mapped[str] = so.mapped_column(sa.String(25))
     director: so.Mapped[str] = so.mapped_column(sa.String(255))
+    description: so.Mapped[str] = so.mapped_column(sa.String(255))
     release_date: so.Mapped[str] = so.mapped_column(sa.String(25))
     budget: so.Mapped[str] = so.mapped_column(sa.String(25))
     post_date: so.Mapped[date] =  so.mapped_column(sa.Date)
     author_id = sa.Column(sa.Integer, sa.ForeignKey('User.id'), nullable=False)
     author = so.relationship("User", foreign_keys=[author_id], primaryjoin="User.id == Movie.author_id")
+
+class MovieMoment(db.Model):
+    __tablename__ = 'MovieMoment'
+    id: so.Mapped[int] = so.mapped_column(primary_key=True)
+    title: so.Mapped[str] = so.mapped_column(sa.String(255), index=True)
+    description: so.Mapped[str] = so.mapped_column(sa.String(500))
+    movie_id = sa.Column(sa.Integer, sa.ForeignKey('Movie.id'), nullable=False)
+    movie = so.relationship("Movie", foreign_keys=[movie_id], primaryjoin="Movie.id == MovieMoment.movie_id")
+
+class MovieReason(db.Model):
+    __tablename__ = 'MovieReason'
+    id: so.Mapped[int] = so.mapped_column(primary_key=True)
+    type: so.Mapped[str] = so.mapped_column(sa.String(1), index=True)
+    description: so.Mapped[str] = so.mapped_column(sa.String(500))
+    movie_id = sa.Column(sa.Integer, sa.ForeignKey('Movie.id'), nullable=False)
+    movie = so.relationship("Movie", foreign_keys=[movie_id], primaryjoin="Movie.id == MovieReason.movie_id")
