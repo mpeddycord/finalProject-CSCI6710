@@ -1,0 +1,20 @@
+from elasticsearch import Elasticsearch
+es = Elasticsearch("http://localhost:9200")
+posts = [
+    {"title": "My First Blog Post", "body": "This is the content of my first blog post."},
+    {"title": "Another Blog Post", "body": "Here's some more content for another post."},
+]
+
+index_name = "post"
+
+for post in posts:
+    es.index(index=index_name, document=post)
+
+es.indices.refresh(index=index_name)
+
+results = es.search(index=index_name, query={"match": {"text": "Another"}})
+
+print(f"Found {results['hits']['total']['value']} blog posts.")
+
+for hit in results['hits']['hits']:
+    print(f"Title: {hit['_source']['title']}, Content: {hit['_source']['content']}")

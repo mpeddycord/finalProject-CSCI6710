@@ -566,7 +566,7 @@
     }
   }
   
-  .movie-poster {
+  .movie-poster-main {
     aspect-ratio: 1.47;
     object-fit: contain;
     object-position: center;
@@ -581,6 +581,9 @@
     width: 100%;
     border-radius: 0px 0px 0px 0px;
     align-self: stretch;
+    aspect-ratio: .75;
+    margin-left: 25px;
+    margin-top: 20px;
   }
   
   .movie-name {
@@ -3190,13 +3193,25 @@
     }
   }
 
-  .movie-poster {
+  .movie-poster-sm {
     aspect-ratio: 1.4;
     object-fit: contain;
     object-position: center;
     width: 100%;
     border-radius: 0px 0px 0px 0px;
     flex-grow: 1;
+
+  }
+
+  .movie-poster {
+    /* aspect-ratio: 1.4;
+    object-fit: contain;
+    object-position: center; */
+    width: 100%;
+    border-radius: 0px 0px 0px 0px;
+    flex-grow: 1;
+    width: 400px;
+    height: 300px;
   }
 
   @media (max-width: 991px) {
@@ -4152,7 +4167,7 @@
   justify-content: center !important;
 }
 
-.subscribe-button {
+.subscribe-button, .search-button {
   border-radius: 16px;
   background-color: #000;
   align-self: start;
@@ -4184,4 +4199,80 @@
 
 input:focus, textarea:focus, select:focus{
   outline: none;
+}
+
+.form-input-search {
+  border-radius: 16px;
+  background-color: #fff;
+  border: 0;
+  outline: 0;
+  margin-top: 12px;
+  padding: 19px 20px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.28px;
+  line-height: 24px;
+  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  width: 425px;
+}
+
+.about-us-image-column {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  line-height: normal;
+  width: 34%;
+  margin-left: 100px;
+}
+
+@media (max-width: 991px) {
+  .about-us-image-column {
+    width: 100%;
+  }
+}
+
+.about-us-image {
+  aspect-ratio: 0.74;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .about-us-image {
+    max-width: 100%;
+    margin-top: 27px;
+  }
+}
+
+.about-us-description {
+  color: #000000;
+  font-size: 16px;
+  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: -0.32px;
+  margin-top: 75px;
+  margin-left: 49px;
+  width: 75%;
+}
+
+.category-image-container {
+  margin-top: 50px;
+  display: flex;  
+  justify-content: center;
+}
+
+.category-image-align {
+  float: left;
+}
+.category-image {
+  width: 200px;
+  height:200px;
+  cursor: pointer;
+}
+
+.no-underline {
+  text-decoration: none;
+  color: black;
 }

@@ -1,0 +1,113 @@
+{% extends "base-alt.html" %}
+
+{% block content %}
+
+<section class="best-movies">
+    <h2 class="section-title-main centered">The best {{title}} movies, period</h2>
+    <p class="section-description centered">
+      Discover your next cinematic obsession! Search a vast library of blockbusters, indie gems, timeless classics, and hidden treasures.
+       Whether you're in the mood for heart-pounding action, 
+      heartwarming tales, or spine-tingling thrills, find the perfect movie to light up your screen.
+    </p>
+
+    <div class="movie-grid">
+      {% for movie in movies_1 %}
+      <a href="/movie/{{movie.id}}" class="movie-link">
+        <article class="movie-card movie-card-background">
+          <img
+            src="{{ url_for('static', filename=movie.image_url) }}"
+            class="movie-poster"
+            alt={{movie.title}}
+          />
+          <h3 class="movie-name">{{movie.title}}</h3>
+          <div class="movie-details">
+            <div class="duration">
+              <img
+              src="{{ url_for('static', filename='images/clock.png') }}"
+              class="duration-icon"
+              alt="Clock icon"
+            />
+              <span >{{movie.runtime}} Minutes</span>
+            </div>
+            <div class="genre">
+              <img
+                src="{{ url_for('static', filename='images/camera.png') }}"
+                class="genre-icon"
+                alt="Genre icon"
+              />
+              <span>{{movie.genre}}</span>
+            </div>
+          </div>
+        </article>
+      </a>
+      {% endfor %}
+    </div>
+
+    <div class="movie-grid">
+      {% for movie in movies_2 %}
+      <a href="/movie/{{movie.id}}" class="movie-link">
+        <article class="movie-card movie-card-background">
+          <img
+            src="{{ url_for('static', filename=movie.image_url) }}"
+            class="movie-poster"
+            alt={{movie.title}}
+          />
+          <h3 class="movie-name">{{movie.title}}</h3>
+          <div class="movie-details">
+            <div class="duration">
+              <img
+              src="{{ url_for('static', filename='images/clock.png') }}"
+              class="duration-icon"
+              alt="Clock icon"
+            />
+              <span >{{movie.runtime}} Minutes</span>
+            </div>
+            <div class="genre">
+              <img
+                src="{{ url_for('static', filename='images/camera.png') }}"
+                class="genre-icon"
+                alt="Genre icon"
+              />
+              <span>{{movie.genre}}</span>
+            </div>
+          </div>
+        </article>
+        </a>
+      {% endfor %}
+    </div>
+
+    <div class="movie-grid">
+      {% for movie in movies_3 %}
+      <a href="/movie/{{movie.id}}" class="movie-link">
+        <article class="movie-card movie-card-background">
+          <img
+            src="{{ url_for('static', filename=movie.image_url) }}"
+            class="movie-poster"
+            alt={{movie.title}}
+          />
+          <h3 class="movie-name">{{movie.title}}</h3>
+          <div class="movie-details">
+            <div class="duration">
+              <img
+              src="{{ url_for('static', filename='images/clock.png') }}"
+              class="duration-icon"
+              alt="Clock icon"
+            />
+              <span >{{movie.runtime}} Minutes</span>
+            </div>
+            <div class="genre">
+              <img
+                src="{{ url_for('static', filename='images/camera.png') }}"
+                class="genre-icon"
+                alt="Genre icon"
+              />
+              <span>{{movie.genre}}</span>
+            </div>
+          </div>
+        </article>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  {% endblock %}

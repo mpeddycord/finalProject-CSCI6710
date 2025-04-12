@@ -4,12 +4,22 @@
 
     <section class="hero">
       <h1 class="hero-title">{{title}}</h1>
-      <p class="hero-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+      <p class="hero-description">Immerse yourself in a cinematic journey with our curated list of movie blog posts! From heart-pounding action thrillers to tear-jerking dramas, our collection dives deep into reviews, behind-the-scenes trivia, and thematic analyses. Whether you're hunting for hidden gems or revisiting iconic classics, these posts are a treasure trove for every movie enthusiast. Uncover the magic of storytelling, dissect legendary performances, and explore how films shape our culture. Let’s roll the reel and ignite your passion for all things cinema!</p>
     </section>
 
     <div class="search-container">
-      <div class="search-input">Search article, news or movie...</div>
-      <button class="search-button">Search</button>
+      <div>
+        <form class="" method="get" action="{{url_for('main.search')}}">
+          <div class="form-row">
+            <div class="form-group"> 
+              {{g.search_form.q(size=20, class='form-input-search', placeholder=g.search_form.q.label.text)}}
+            </div>
+            <div>
+              <button class="search-button">Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
 
     <section class="content-grid">

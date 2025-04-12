@@ -1,0 +1,39 @@
+{% extends "base-alt.html" %}
+
+{% block content %}
+    <section class="hero">
+         <h1 class="hero-title">Search Results</h1>
+    </section>
+    <section class="content-grid">
+        <div class="blog-columns">
+          <div class="blog-content">
+                {% for post in posts %}
+                <div class="grid-layout">
+                    <div class="image-column">
+                    <div class="blog-images">
+                        <a href='/post/{{post.id}}'>
+                        <img src="{{ url_for('static', filename=post.image_url) }}" alt="Blog post image" class="blog-image">
+                        </a>
+                    </div>
+                    </div>
+                    <div class="content-column">
+                    <div class="blog-posts">
+                        <article class="blog-post">
+                        <h2 class="post-title"><a href='/post/{{post.id}}' class="post-link">{{post.title}}</a></h2>
+                        <p class="post-description">{{post.stub}}</p>
+                        <div class="post-author-info">
+                            <img src="{{ url_for('static', filename=post.author.avatar_url) }}" alt={{post.author.name}} class="post-author-image">
+                            <p class="author-name">{{post.author.name}}</p>
+                            <span class="divider-line"></span>
+                            <div class="post-date">{{post.date_created.strftime('%B %-d, %Y')}}</div>
+                        </div>
+                        </article>
+                    </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

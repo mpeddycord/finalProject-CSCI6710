@@ -35,7 +35,7 @@
               <div class="movie-footer">
                 <div class="author">
                   <img
-                    src="{{ url_for('static', filename='images/author.png') }}"
+                    src="{{ url_for('static', filename=top_movie.author.avatar_url) }}"
                     class="author-image"
                     alt="Author"
                   />
@@ -68,13 +68,65 @@
       <section class="categories-section">
         <div class="section-header">
           <h2 class="section-title-main">Categories</h2>
-          <a href="#" class="view-all">View All Categories</a>
+          <a href="/genre/All" class="view-all">View All Categories</a>
         </div>
-        <img
-          src="{{ url_for('static', filename='images/categories.png') }}"
-          class="categories-image"
-          alt="Categories"
-        />
+        <div class="category-image-container">
+          <div class="category-image-align">
+            <a href="/genre/Romance">
+              <img
+              src="{{ url_for('static', filename='images/romance.png') }}"
+              class="category-image" 
+              alt="Romance"
+            />
+            </a>
+          </div>
+          <div class="category-image-align">
+            <a href="/genre/Action">
+              <img
+              src="{{ url_for('static', filename='images/action.png') }}"
+              class="category-image" 
+              alt="Action"
+            />
+            </a>
+          </div>
+          <div class="category-image-align">
+            <a href="/genre/Fantasy">
+              <img
+              src="{{ url_for('static', filename='images/fantasy.png') }}"
+              class="category-image" 
+              alt="Fantasy"
+            />
+            </a>
+          </div>
+          <div class="category-image-align">
+            <a href="/genre/Horror">
+              <img
+              src="{{ url_for('static', filename='images/horror.png') }}"
+              class="category-image" 
+              alt="Horror"
+            />
+            </a>
+          </div>
+          <div class="category-image-align">
+            <a href="/genre/Sci-Fi">
+              <img
+              src="{{ url_for('static', filename='images/scifi.png') }}"
+              class="category-image" 
+              alt="Sci-Fi"
+            />
+            </a>
+          </div>
+          <div class="category-image-align">
+            <a href="/genre/Drama">
+              <img
+              src="{{ url_for('static', filename='images/drama.png') }}"
+              class="category-image" 
+              alt="Drama"
+            />
+            </a>
+
+          </div>
+        </div>
       </section>
 
       <section class="best-movies">
