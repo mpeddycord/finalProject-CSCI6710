@@ -48,7 +48,7 @@ def contact():
     bottom_movies_1 = Movie.query.where(Movie.position == 'bottom').limit(4)
     return render_template('contact.html', form=form, name=name, email=email, subject=subject, inquiry_type=inquiry_type, message=message, title=title, bottom_movies_1=bottom_movies_1, subscribe_form=subscribe_form, subscribe_email=subscribe_email)
 
-@bp.route('/movies')
+@bp.route('/movies' , methods=['GET', 'POST'])
 def movies():
     title = ''
     movies_1 = Movie.query.limit(3)
@@ -62,7 +62,7 @@ def movies():
     bottom_movies_1 = Movie.query.where(Movie.position == 'bottom').limit(4)
     return render_template('genre.html', title=title, movies_1=movies_1, movies_2=movies_2, movies_3=movies_3, email=email, form=form, bottom_movies_1=bottom_movies_1)
 
-@bp.route('/genre/<name>')
+@bp.route('/genre/<name>' , methods=['GET', 'POST'])
 def genre(name):
     if name == 'All':
         title = ''

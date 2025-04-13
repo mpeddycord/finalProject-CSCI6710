@@ -1030,7 +1030,7 @@
     margin-top: 81px;
     margin-left: auto;
     margin-right: auto;
-    width: 229px;
+    width: 250px;
     max-width: 100%;
     text-align: center;
     display: block;
@@ -4349,4 +4349,13 @@ input:focus, textarea:focus, select:focus{
 .post-list {
   width: 740px;
   margin-left: 150px;
+}
+
+li.nav-item {
+  margin-left: 40px;
+  font-weight: 500;
+}
+
+.button-padding {
+  padding: 10px 60px !important;
 }

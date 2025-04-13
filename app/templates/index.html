@@ -44,7 +44,7 @@
                     <p class="publish-date">{{top_movie.post_date.strftime('%B %-d, %Y')}}</p>
                   </div>
                 </div>
-                <a href="/movie/{{top_movie.id}}" class="cta-button">View Movie</a>
+                 <a href="/movie/{{top_movie.id}}" class="btn btn-lg btn-dark button-padding" role="button">View Movie</a>
               </div>
             </div>
           </div>
@@ -68,7 +68,7 @@
       <section class="categories-section">
         <div class="section-header">
           <h2 class="section-title-main">Categories</h2>
-          <a href="/genre/All" class="view-all">View All Categories</a>
+           <a href="/genre/All" role="button" class="btn btn-light btn-lg">View All Categories</a>
         </div>
         <div class="category-image-container">
           <div class="category-image-align">
@@ -244,6 +244,24 @@
         </div>
       </section>
 
+      <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalLabel">More about our website</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              We can help you find the latest movies to stream or just uncover an old classic you may have forgotten.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <section class="cta-section">
         <div class="cta-content">
           <div class="cta-text">
@@ -254,7 +272,9 @@
             <p class="cta-description">
               Search for unforgettable films, from blockbuster hits to hidden gems. Your next movie adventure starts here!
             </p>
-            <a href="#" class="cta-button">Learn More</a>
+            <button type="button" class="btn btn-lg btn-dark" data-toggle="modal" data-target="#modal">
+              Learn More
+            </button>
           </div>
           <div class="cta-image">
             <img
@@ -438,8 +458,12 @@
               <p class="comment-date">September 19</p>
             </div>
           </div>
-  
-          <a href="#" class="cta-button centered-button">Visit Our Instagram</a>
+
+          <div class="centered-button">
+            <button type="button" class="btn btn-lg btn-dark">
+              Visit Our Instagram&nbsp;&nbsp;<i class="bi bi-instagram"></i>
+              </button>
+          </div> 
         </div>
 
       </section>
