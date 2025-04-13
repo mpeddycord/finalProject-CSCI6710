@@ -25,93 +25,13 @@
           </p>
 
           <img
-            src="{{ url_for('static', filename='images/ebert-full.png') }}"
+            src="{{ url_for('static', filename=post.main_image_url) }}"
             alt="Movie critic at work"
             class="post-image"
           />
 
-          <div class="post-content-header">
-            <div class="share-container">
-              <div class="share-prompt">SHARE THIS ON:</div>
-              <img src="{{ url_for('static', filename='images/Social-vert.svg') }}" style="margin-top: 10px;" />
-            </div>
-            <h2 class="section-title">
-              How did you start out in the movie industry?
-            </h2>
 
-            
-          </div>
-
-          <p class="post-paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            ac ultrices odio. Nulla at congue diam, at dignissim turpis. Ut
-            vehicula sed velit a faucibus. In feugiat vestibulum velit vel
-            pulvinar. Fusce id mollis ex. Praesent feugiat elementum ex ut
-            suscipit.
-          </p>
-
-          <h2 class="section-title">What do you like most about your job?</h2>
-
-          <p class="post-paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            ac ultrices odio. Nulla at congue diam, at dignissim turpis. Ut
-            vehicula sed velit a faucibus. In feugiat vestibulum velit vel
-            pulvinar. Fusce id mollis ex. Praesent feugiat elementum ex ut
-            suscipit.
-          </p>
-
-          <h2 class="section-title">What do you do on your days off?</h2>
-
-          <figure class="post-figure">
-            <img
-              src="{{ url_for('static', filename='images/ebert2.png') }}"
-              alt="Day off activities"
-              class="post-image"
-            />
-          </figure>
-
-          <p class="post-paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            ac ultrices odio. Nulla at congue diam, at dignissim turpis. Ut
-            vehicula sed velit a faucibus. In feugiat vestibulum velit vel
-            pulvinar. Fusce id mollis ex. Praesent feugiat elementum ex ut
-            suscipit.
-          </p>
-
-          <h2 class="section-title">
-            What would your advice be to young people looking to get their foot
-            in the door?
-          </h2>
-
-          <p class="post-paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            ac ultrices odio. Nulla at congue diam, at dignissim turpis. Ut
-            vehicula sed velit a faucibus. In feugiat vestibulum velit vel
-            pulvinar. Fusce id mollis ex. Praesent feugiat elementum ex ut
-            suscipit.
-          </p>
-
-          <hr class="quote-divider" />
-
-          <blockquote class="post-quote">
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            ac ultrices odio."
-          </blockquote>
-
-          <hr class="quote-divider" />
-
-          <h2 class="section-title">
-            What is the biggest misconception that people have about being a
-            professional movie critic?
-          </h2>
-
-          <p class="post-paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            ac ultrices odio. Nulla at congue diam, at dignissim turpis. Ut
-            vehicula sed velit a faucibus. In feugiat vestibulum velit vel
-            pulvinar. Fusce id mollis ex. Praesent feugiat elementum ex ut
-            suscipit.
-          </p>
+          {{post.body|safe}}
         </section>
 
     {% endblock %}

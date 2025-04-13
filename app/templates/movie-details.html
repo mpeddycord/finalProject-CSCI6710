@@ -103,6 +103,10 @@
           </div>
         </section>
 
+        <p class="movie-description">
+          {{movie.synopsis}}
+        </p>
+
         <section class="review-section">
           <div class="review-columns">
             <div class="review-content">
@@ -173,5 +177,23 @@
         <div class="divider"></div>
         {% endfor %}
       </section>
+
+      <div class="carousel-wrapper">
+        <h2 class="review-title">Movies Bring Us Together</h2>
+        <section id="carousel">
+          <img src="../static/images/arrow_left.svg" alt="Left Arrow" class="arrow" id="left-arrow" />
+          <img src="../static/images/arrow_right.svg" alt="Right Arrow" class="arrow" id="right-arrow" />
+          <div class="slide-image" id="slide1">
+          </div>
+          <div class="slide-image" id="slide2">
+          </div>
+          <div class="slide-image" id="slide3">
+          </div>
+          <div class="slide-image" id="slide4">
+          </div>
+          <div class="slide-image" id="slide5">
+          </div>
+        </section>
+      </div>
 
     {% endblock %}

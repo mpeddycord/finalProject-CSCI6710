@@ -4276,3 +4276,77 @@ input:focus, textarea:focus, select:focus{
   text-decoration: none;
   color: black;
 }
+
+.carousel-wrapper {
+  margin-top: 50px;
+}
+
+#slide1 {
+  background-image: url('../images/commander.png');
+}
+
+#slide2 {
+  background-image: url('../images/airplane.png');
+}
+
+#slide3 {
+  background-image: url('../images/star-wars-scene.png');
+}
+
+#slide4 {
+  background-image: url('../images/blade-runner.png');
+}
+
+#slide5 {
+  background-image: url('../images/ratatouille.png');
+}
+
+.slide-image {
+  background-position: center;
+  background-size: cover;
+  width: 400px;
+  height: 300px;
+  display: inline-block;
+}
+
+#carousel {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 400px;
+  height: 300px;
+  margin-top: 50px;
+  position: relative;
+}
+
+.arrow {
+  width: 5%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+#right-arrow {
+  right: 20px;
+}
+
+#left-arrow {
+  left: 20px;
+}
+
+@media (max-device-width: 1024px) {
+  .arrow {
+    width: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  .arrow {
+    width: 10%;
+  }
+}
+
+.post-list {
+  width: 740px;
+  margin-left: 150px;
+}

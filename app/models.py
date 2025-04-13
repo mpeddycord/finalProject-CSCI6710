@@ -62,6 +62,7 @@ class Post(SearchableMixin, db.Model):
     id: so.Mapped[int] = so.mapped_column(primary_key=True)
     title: so.Mapped[str] = so.mapped_column(sa.String(255), index=True)
     image_url: so.Mapped[str] = so.mapped_column(sa.String(255), index=True)
+    main_image_url: so.Mapped[str] = so.mapped_column(sa.String(255), index=True)
     stub: so.Mapped[str] = so.mapped_column(sa.String(255), index=True)
     body: so.Mapped[str] = so.mapped_column(sa.String(2000))
     date_created: so.Mapped[date] =  so.mapped_column(sa.Date)
@@ -82,6 +83,7 @@ class Movie(db.Model):
     release_date: so.Mapped[str] = so.mapped_column(sa.String(25))
     budget: so.Mapped[str] = so.mapped_column(sa.String(25))
     post_date: so.Mapped[date] =  so.mapped_column(sa.Date)
+    synopsis: so.Mapped[str] = so.mapped_column(sa.String(500))
     author_id = sa.Column(sa.Integer, sa.ForeignKey('User.id'), nullable=False)
     author = so.relationship("User", foreign_keys=[author_id], primaryjoin="User.id == Movie.author_id")
 
